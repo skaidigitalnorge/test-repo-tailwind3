@@ -27,7 +27,12 @@ export default function Home() {
         }}
       />
       <Navbar />
-      test
+      <div className="rowToColLg border hover">
+        <p>test</p>
+        <p>test</p>
+        <p>test</p>
+        <a className="button">Test</a>
+      </div>
       <Footer />
     </>
   );
