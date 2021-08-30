@@ -4,9 +4,10 @@ import Image from "next/image";
 const myLoader = ({ src, width, quality }) => {
   return `https://res.cloudinary.com/skai-digital/image/upload/q_auto/${src}`;
 };
-export const Bilde = ({ src, alt, w, h, c, layout, of, op }) => {
+export const Bilde = ({ src, alt, w, h, c, layout, of, op, id }) => {
   return (
     <Image
+      key={id}
       className={c}
       objectFit={of}
       objectPosition={op}
@@ -101,10 +102,11 @@ export const Layout = ({ children, c }) => {
     </div>
   );
 };
-
-// !
-// ! Grid related items
-// !
+//
+//
+// * Grid related items
+//
+//
 export const Grid = ({ children, c }) => {
   const klasseNavn = `grid grid-cols-4 md:grid-cols-8 lg:grid-cols-12 gap-24 auto-rows-auto ${c}`;
   return <div className={klasseNavn}>{children}</div>;
@@ -118,7 +120,63 @@ export const GridItem = ({ c, children, id }) => {
   );
 };
 
-export const FET = ({ c, children, id }) => {
+export const TwoFourTwo = ({ c, children, id }) => {
+  return (
+    <div key={id} className={`${c} col-span-2 md:col-span-4 lg:col-span-2`}>
+      {children}
+    </div>
+  );
+};
+
+export const FourFourFour = ({ c, children, id }) => {
+  return (
+    <div key={id} className={`${c} col-span-4`}>
+      {children}
+    </div>
+  );
+};
+
+export const FourFourSix = ({ c, children, id }) => {
+  return (
+    <div key={id} className={`${c} col-span-4 md:col-span-4 lg:col-span-6`}>
+      {children}
+    </div>
+  );
+};
+
+export const FourEightFour = ({ c, children, id }) => {
+  return (
+    <div key={id} className={`${c} col-span-4 md:col-span-8 lg:col-span-4`}>
+      {children}
+    </div>
+  );
+};
+
+export const FourEightFive = ({ c, children, id }) => {
+  return (
+    <div key={id} className={`${c} col-span-4 md:col-span-8 lg:col-span-5`}>
+      {children}
+    </div>
+  );
+};
+
+export const FourEightSix = ({ c, children, id }) => {
+  return (
+    <div key={id} className={`${c} col-span-4 md:col-span-8 lg:col-span-6`}>
+      {children}
+    </div>
+  );
+};
+
+export const FourEightEight = ({ c, children, id }) => {
+  return (
+    <div key={id} className={`${c} col-span-4 md:col-span-8`}>
+      {children}
+    </div>
+  );
+};
+
+export const FourEightTwelve = ({ c, children, id }) => {
   return (
     <div key={id} className={`${c} col-span-4 md:col-span-8 lg:col-span-12`}>
       {children}

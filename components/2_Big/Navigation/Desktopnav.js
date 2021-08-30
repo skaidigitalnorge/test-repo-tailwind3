@@ -5,7 +5,7 @@ export const Desktopnav = () => {
   return (
     <Layout>
       <div className="flex justify-between bg-white my-24">
-        <div class="self-center ">
+        <div className="self-center ">
           <Link href="/">
             <a>
               <p className="text-h3 font-semibold flex mb-0 ">Logo</p>

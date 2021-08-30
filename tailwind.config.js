@@ -3,38 +3,32 @@ module.exports = {
   theme: {
     fontSize: {
       //
-      // ? Unless specified otherwise, only edit the font size (first variable) and lineHeight
-      h1: ["49px", { lineHeight: "73px" }],
-      h2: ["39px", { lineHeight: "48px" }],
-      h3: ["31px", { lineHeight: "48px" }],
-      h4: ["25px", { lineHeight: "40px" }],
-      h5: ["20px", { lineHeight: "40px" }],
-      h5: ["16px", { lineHeight: "24px" }],
+      // ? Remember to set the correct size and line height. Look at the design!
+      display: ["49px", { lineHeight: "73px" }],
+      h1: ["39px", { lineHeight: "48px" }],
+      h2: ["31px", { lineHeight: "48px" }],
+      h3: ["25px", { lineHeight: "40px" }],
+      h4: ["20px", { lineHeight: "40px" }],
       p: ["16px", { lineHeight: "32px" }],
-      small: ["14px", { letterSpacing: "0px" }],
-      tiny: ["10px", { lineHeight: "10px" }],
+      medium: ["14px", { lineHeight: "" }],
+      small: ["10px", { lineHeight: "10px" }],
     },
     //
-    // ? Set the font families according to the design spec. Set "serif: ..." if you have two fonts
+    // ? Set the font families according to the design spec. For example:
+    // sans: ["Poppins", "sans-serif"],
     fontFamily: {
-      sans: ["Poppins", "sans-serif"],
+      sans: [],
     },
     //
-    // ? Configure the colors that do not have a hexcode already
+    // ? Configure the colors that do not have a hexcode already. Add all colors from the "color palette" section in the design
     colors: {
       primary: "#",
-      primaryVar: "#",
-      secondary: "#",
-      secondaryVar: "#",
-      dark: "#",
-      darkVar: "#",
-      light: "#",
-      lightVar: "#",
+      accent: "#",
       white: "#ffffff",
       black: "#000000",
     },
     //
-    // ?  Set box shadow settings if the project has them. If not, delete.
+    // ?  Set box shadow settings if the project has them. If not, delete line 31-33
     boxShadow: {
       shadow: "0px 8px 24px rgba(0, 0, 0, 0.15)",
     },

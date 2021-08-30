@@ -3,6 +3,8 @@
 @tailwind components;
 @tailwind utilities;
 
+/* TODO Import fonts styles from the webfonts helper, inside of the @font-face {} tag */
+
 /* !*Applies global styles to all the elements to select */
 /* TODO Change the settings to match the design */
 @layer base {
@@ -21,16 +23,6 @@
     @apply lg:text-h3;
     @apply font-semibold;
   }
-  h4 {
-    @apply text-h5;
-    @apply lg:text-h4;
-    @apply font-medium;
-  }
-  h5 {
-    @apply text-p;
-    @apply lg:text-h5;
-    @apply font-medium;
-  }
   p,
   a {
     @apply text-p;
@@ -39,6 +31,7 @@
     @apply hover:underline;
     @apply focus:underline;
   }
+
   /* *Flexbox utilities */
   .colToRowMd {
     @apply flex;
@@ -66,7 +59,7 @@
   /* box-shadow: 2px 2px 2px 2px red;; */
 }
 
-/* TODO Hover styling. Change the settings to match the design*/
+/* TODO Hover styling. Change the settings to match the design */
 .hover:hover,
 .hover:focus {
   transition: 200ms ease-in-out;
@@ -78,4 +71,31 @@
 .button:hover,
 .button:focus {
   text-decoration: none;
+}
+
+/* *Brightness filters */
+.dimmer-33 {
+  filter: brightness(33%);
+}
+.dimmer-50 {
+  filter: brightness(50%);
+}
+.dimmer-75 {
+  filter: brightness(75%);
+}
+
+/* * Remove underline styling for buttons */
+.noUnderline:hover,
+.noUnderline:focus,
+.button:hover,
+.button:focus {
+  text-decoration: none;
+}
+
+/* * Rotate an object, image, etc. */
+.rotate180 {
+  transform: rotate(180deg);
+}
+.rotate90 {
+  transform: rotate(90deg);
 }

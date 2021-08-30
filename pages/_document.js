@@ -10,7 +10,7 @@ class MyDocument extends Document {
     // TODO Paste the GA tracking in the string below and uncomment the code in the <Head>-tag"
     const GA_MEASUREMENT_ID = "GA_MEASUREMENT_ID";
     return (
-      <Html>
+      <Html lang="nb">
         <Head>
           {/* <script
             async
