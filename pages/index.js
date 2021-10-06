@@ -1,31 +1,9 @@
 import { NextSeo } from "next-seo";
-import Image from "next/image";
 import { PrimaryButton, SecondaryButton } from "../components/1_Small/Buttons";
 import { Footer } from "../components/2_Big/Navigation/Footer";
 import { Navbar } from "../components/2_Big/Navigation/Navbar";
-import client from "../apollo-client";
-import {
-  kategori_query,
-  produkt_query,
-} from "../components/1_Small/wp-queries";
-import { FourFourFour, Grid, Layout } from "../components/1_Small/Base";
-import { KategoriSpørring } from "../components/3_Pages/0_Home/0_KategoriSpørring";
-import { ProduktSpørring } from "../components/3_Pages/0_Home/1_ProduktSpørring";
 
-export async function getStaticProps() {
-  const { data: kategori } = await client.query({ query: kategori_query });
-  const { data: produkt } = await client.query({ query: produkt_query });
-  return {
-    props: {
-      kategori: kategori.productCategories.nodes,
-      produkt: produkt.products.nodes,
-    },
-    revalidate: 60,
-  };
-}
-
-export default function Home({ kategori, produkt }) {
-  console.log(produkt);
+export default function Home() {
   return (
     <>
       <NextSeo
@@ -50,15 +28,22 @@ export default function Home({ kategori, produkt }) {
         }}
       />
       <Navbar />
-      <Layout>
-        {"cHJvZHVjdF92YXJpYXRpb246NDM=" == "cHJvZHVjdF92YXJpYXRpb246MzA=" ? (
-          <div>De er Like</div>
-        ) : (
-          <div>de er ULIKE</div>
-        )}
-        {/* <KategoriSpørring kategori={kategori} /> */}
-        {/* <ProduktSpørring produkt={produkt} /> */}
-      </Layout>
+      <div className="rowToColLg border hover">
+        <h1>Heading 1</h1>
+        <h2>Heading 2</h2>
+        <h3>Heading 3</h3>
+        <p>
+          This is a paragraph using the p-tag in html! This is used to see how
+          the text spans over the page
+        </p>
+        <div className="w-240 mt-32">
+          <PrimaryButton text="Primary button" href="" />
+          <SecondaryButton text="Secondary button" href="" />
+        </div>
+        <a className="">
+          This is a paraph using the a-tag (a link). Test how it hovers!
+        </a>
+      </div>
       <Footer />
     </>
   );
