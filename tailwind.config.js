@@ -36,6 +36,7 @@ module.exports = {
     // ? Set the border radius for buttons
     borderRadius: {
       circle: "9999px",
+      rund: "20px",
     },
     //
     //
@@ -47,7 +48,7 @@ module.exports = {
     //
     //
     // ! The stylings below are all the same for each project. Do not touch.
-    // 
+    //
     spacing: {
       0: "0px",
       1: "1px",
