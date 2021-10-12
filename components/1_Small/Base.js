@@ -112,9 +112,26 @@ export const Grid = ({ children, c }) => {
   return <div className={klasseNavn}>{children}</div>;
 };
 
+export const SubGrid8 = ({ children, c }) => {
+  const klasseNavn = `grid gap-8 auto-rows-auto ${c}`;
+  return <div className={klasseNavn}>{children}</div>;
+};
+
+export const SubGrid24 = ({ children, c }) => {
+  const klasseNavn = `grid gap-24 auto-rows-auto ${c}`;
+  return <div className={klasseNavn}>{children}</div>;
+};
+
 export const GridItem = ({ c, children, id }) => {
   return (
     <div key={id} className={c}>
+      {children}
+    </div>
+  );
+};
+export const OneOneOne = ({ c, children, id }) => {
+  return (
+    <div key={id} className={`${c} col-span-1`}>
       {children}
     </div>
   );
@@ -128,9 +145,72 @@ export const TwoFourTwo = ({ c, children, id }) => {
   );
 };
 
+export const TwoTwoTwo = ({ c, children, id }) => {
+  return (
+    <div key={id} className={`${c} col-span-2`}>
+      {children}
+    </div>
+  );
+};
+
+export const TwoTwoThree = ({ c, children, id }) => {
+  return (
+    <div key={id} className={`${c} col-span-2 lg:col-span-3`}>
+      {children}
+    </div>
+  );
+};
+
+export const TwoFourThree = ({ c, children, id }) => {
+  return (
+    <div key={id} className={`${c} col-span-2 md:col-span-4 lg:col-span-2`}>
+      {children}
+    </div>
+  );
+};
+
 export const FourFourFour = ({ c, children, id }) => {
   return (
     <div key={id} className={`${c} col-span-4`}>
+      {children}
+    </div>
+  );
+};
+
+export const FourFourFive = ({ c, children, id }) => {
+  return (
+    <div key={id} className={`${c} col-span-4 lg:col-span-5`}>
+      {children}
+    </div>
+  );
+};
+
+export const ThreeThreeThree = ({ c, children, id }) => {
+  return (
+    <div key={id} className={`${c} col-span-3`}>
+      {children}
+    </div>
+  );
+};
+export const ThreeThreeFour = ({ c, children, id }) => {
+  return (
+    <div key={id} className={`${c} col-span-3 lg:col-span-4`}>
+      {children}
+    </div>
+  );
+};
+
+export const FourTwoTwo = ({ c, children, id }) => {
+  return (
+    <div key={id} className={`${c} col-span-4 md:col-span-2`}>
+      {children}
+    </div>
+  );
+};
+
+export const FourFourThree = ({ c, children, id }) => {
+  return (
+    <div key={id} className={`${c} col-span-4 md:col-span-4 lg:col-span-6`}>
       {children}
     </div>
   );

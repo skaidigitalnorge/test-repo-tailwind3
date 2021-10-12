@@ -3,7 +3,7 @@ module.exports = {
   theme: {
     fontSize: {
       //
-      // ? Remember to set the correct size and line height. Look at the design!
+      // TODO Remember to set the correct size and line height. Look at the design!
       display: ["49px", { lineHeight: "73px" }],
       h1: ["39px", { lineHeight: "48px" }],
       h2: ["31px", { lineHeight: "48px" }],
@@ -14,28 +14,49 @@ module.exports = {
       small: ["10px", { lineHeight: "10px" }],
     },
     //
-    // ? Set the font families according to the design spec. For example:
-    // sans: ["Poppins", "sans-serif"],
+    // TODO Set the font families according to the design spec. For example:
+    // sans: ["Poppins", "sans-serif"], for example
     fontFamily: {
       sans: [],
     },
     //
-    // ? Configure the colors that do not have a hexcode already. Add all colors from the "color palette" section in the design
+    // TODO Configure the colors that do not have a hexcode already. Add all colors from the "color palette" section in the design
     colors: {
-      primary: "#",
-      accent: "#",
+      primary_50: "#BFE0E5",
+      primary_300: "#",
+      primary_500: "#",
+      primary_700: "#008396",
+      primary_900: "#006E7E",
+      secondary_50: "#",
+      secondary_300: "#",
+      secondary_500: "#",
+      secondary_700: "#",
+      secondary_900: "#",
+      neutral_50: "#ECECEC",
+      neutral_100: "#C8C8C8",
+      neutral_200: "#",
+      neutral_300: "#ACACAC",
+      neutral_400: "#",
+      neutral_500: "#",
+      neutral_600: "#",
+      neutral_700: "#4E4E4E",
+      neutral_800: "#",
+      neutral_900: "#1E1E1E",
       white: "#ffffff",
+      white_90: "#FCFCFC",
+      white_25: "#ECECEC",
       black: "#000000",
     },
     //
-    // ?  Set box shadow settings if the project has them. If not, delete line 31-33
+    // TODO  Set box shadow settings if the project has them. If not, delete line 31-33
     boxShadow: {
       shadow: "0px 8px 24px rgba(0, 0, 0, 0.15)",
     },
     // Note to self. Fjerna extend her. Så hvis det ikke funker, legg det tilbake.
-    // ? Set the border radius for buttons
+    // TODO Set the border radius for buttons
     borderRadius: {
       circle: "9999px",
+      rund: "",
     },
     //
     //
@@ -45,9 +66,9 @@ module.exports = {
     //
     //
     //
-    //
+    // !
     // ! The stylings below are all the same for each project. Do not touch.
-    // 
+    // !
     spacing: {
       0: "0px",
       1: "1px",
