@@ -1,6 +1,7 @@
 import { DefaultSeo } from "next-seo";
 import SEO from "../next-seo.config";
 import "../styles/index.css";
+import "../styles/helper.css";
 
 function MyApp({ Component, pageProps }) {
   return (

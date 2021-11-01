@@ -1,11 +1,30 @@
 /*!* Makes tailwind work */
 @tailwind base;
+body {
+  /* * Select font and swap for removing FOWT */
+  font-family: Montserrat;
+  font-display: swap;
+  /* * User can't select text or copy content */
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+  /* * Anti-aliasing to to make fonts smoother */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* TODO Insert font styles from webfonts helper here.
+   TODO Remember to remove the .. in the import to get the import right  */
+
 @tailwind components;
 @tailwind utilities;
 
-/* TODO Import fonts styles from the webfonts helper, inside of the @font-face {} tag */
-
-/* !*Applies global styles to all the elements to select */
 /* TODO Change the settings to match the design */
 @layer base {
   h1 {
@@ -25,77 +44,9 @@
   }
   p,
   a {
-    @apply text-p;
+    @apply text-body_regular;
   }
   a {
-    @apply hover:underline;
-    @apply focus:underline;
+    @apply: cursor-pointer;
   }
-
-  /* *Flexbox utilities */
-  .colToRowMd {
-    @apply flex;
-    @apply flex-col;
-    @apply md:flex-row;
-  }
-  .colToRowLg {
-    @apply flex;
-    @apply flex-col;
-    @apply lg:flex-row;
-  }
-  .rowToColMd {
-    @apply flex;
-    @apply md:flex-col;
-  }
-  .rowToColLg {
-    @apply flex;
-    @apply lg:flex-col;
-  }
-}
-
-/* TODO Border styling. Change the settings to match the design */
-.border {
-  border: 0px 0px 2px 0px black;
-  /* box-shadow: 2px 2px 2px 2px red;; */
-}
-
-/* TODO Hover styling. Change the settings to match the design */
-.hover:hover,
-.hover:focus {
-  transition: 200ms ease-in-out;
-  cursor: pointer;
-  /* background-color: red; */
-}
-
-/* * Remove underline styling for buttons */
-.button:hover,
-.button:focus {
-  text-decoration: none;
-}
-
-/* *Brightness filters */
-.dimmer-33 {
-  filter: brightness(33%);
-}
-.dimmer-50 {
-  filter: brightness(50%);
-}
-.dimmer-75 {
-  filter: brightness(75%);
-}
-
-/* * Remove underline styling for buttons */
-.noUnderline:hover,
-.noUnderline:focus,
-.button:hover,
-.button:focus {
-  text-decoration: none;
-}
-
-/* * Rotate an object, image, etc. */
-.rotate180 {
-  transform: rotate(180deg);
-}
-.rotate90 {
-  transform: rotate(90deg);
 }

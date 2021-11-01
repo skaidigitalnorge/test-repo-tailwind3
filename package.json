@@ -4,11 +4,12 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next export -o _static",
+    "build": "next build",
     "start": "next start",
     "generate:sitemap": "node ./scripts/generate-sitemap.js"
   },
   "dependencies": {
+    "hamburger-react": "^2.4.1",
     "next": "10.2.3",
     "next-seo": "^4.24.0",
     "nextjs-sitemap-generator": "^1.3.1",

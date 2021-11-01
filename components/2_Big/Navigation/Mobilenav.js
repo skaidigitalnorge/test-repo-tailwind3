@@ -1,3 +1,4 @@
+import Hamburger from "hamburger-react";
 import Link from "next/link";
 import { useState } from "react";
 import { Layout } from "../../1_Small/Base";
@@ -7,19 +8,20 @@ export const Mobilenav = () => {
   const openMobilenav = () => {
     setShowMobilenav((prev) => !prev);
   };
+  const storeNameOrLogo = "Okstind";
 
   return (
     <>
       {showMobilenav ? (
         <>
           <Layout>
-            <div className="ml-24 py-24 bg-light pb-56 ">
+            <div className="py-24 bg-light pb-56 ">
               <header className="flex justify-between text-lys  ">
                 <div>
                   <Link href="/">
                     <a>
                       <p className="text-h3 font-semibold flex mb-0 self-center">
-                        BANGKOK
+                        {storeNameOrLogo}
                       </p>
                     </a>
                   </Link>
@@ -27,7 +29,16 @@ export const Mobilenav = () => {
                 <div
                   className="strek"
                   onClick={() => setShowMobilenav(!showMobilenav)}
-                ></div>
+                >
+                  <Hamburger
+                    toggled={showMobilenav}
+                    toggle={setShowMobilenav}
+                    easing="ease-in"
+                    rounded
+                    label="Vis meny"
+                    hideOutline={false}
+                  />
+                </div>
               </header>
               <ul className="mt-56">
                 <Link href="/">
@@ -61,15 +72,24 @@ export const Mobilenav = () => {
         </>
       ) : (
         <Layout>
-          <div className="ml-24 bg-white flex justify-between py-24">
+          <div className="bg-white flex justify-between py-24">
             <p className="text-h3 font-semibold flex mb-0 self-center">
-              BANGKOK
+              {storeNameOrLogo}
             </p>
 
             <div
               className="strek flex self-center"
               onClick={() => setShowMobilenav(!showMobilenav)}
-            ></div>
+            >
+              <Hamburger
+                toggled={showMobilenav}
+                toggle={setShowMobilenav}
+                easing="ease-in"
+                rounded
+                label="Vis meny"
+                hideOutline={false}
+              />
+            </div>
           </div>
         </Layout>
       )}

@@ -9,9 +9,10 @@ module.exports = {
       h2: ["31px", { lineHeight: "48px" }],
       h3: ["25px", { lineHeight: "40px" }],
       h4: ["20px", { lineHeight: "40px" }],
-      p: ["16px", { lineHeight: "32px" }],
-      medium: ["14px", { lineHeight: "" }],
-      small: ["10px", { lineHeight: "10px" }],
+      body_large: ["21px", { lineHeight: "32px" }],
+      body_regular: ["16px", { lineHeight: "32px" }],
+      body_medium: ["14px", { lineHeight: "" }],
+      body_small: ["10px", { lineHeight: "10px" }],
     },
     //
     // TODO Set the font families according to the design spec. For example:
@@ -22,9 +23,9 @@ module.exports = {
     //
     // TODO Configure the colors that do not have a hexcode already. Add all colors from the "color palette" section in the design
     colors: {
-      primary_50: "#BFE0E5",
-      primary_300: "#",
-      primary_500: "#",
+      primary_50: "#F8FAFC",
+      primary_300: "#F1F5F9",
+      primary_500: "#E2E8F0",
       primary_700: "#008396",
       primary_900: "#006E7E",
       secondary_50: "#",
@@ -32,19 +33,17 @@ module.exports = {
       secondary_500: "#",
       secondary_700: "#",
       secondary_900: "#",
-      neutral_50: "#ECECEC",
-      neutral_100: "#C8C8C8",
-      neutral_200: "#",
-      neutral_300: "#ACACAC",
-      neutral_400: "#",
-      neutral_500: "#",
-      neutral_600: "#",
-      neutral_700: "#4E4E4E",
-      neutral_800: "#",
+      neutral_50: "#F8FAFC",
+      neutral_100: "#F1F5F9",
+      neutral_200: "#E2E8F0",
+      neutral_300: "#CBD5E1",
+      neutral_400: "#94A3BB",
+      neutral_500: "#64748B",
+      neutral_600: "#475569",
+      neutral_700: "#334155",
+      neutral_800: "#1E292B",
       neutral_900: "#1E1E1E",
       white: "#ffffff",
-      white_90: "#FCFCFC",
-      white_25: "#ECECEC",
       black: "#000000",
     },
     //
@@ -56,7 +55,7 @@ module.exports = {
     // TODO Set the border radius for buttons
     borderRadius: {
       circle: "9999px",
-      rund: "",
+      rund: "24px",
     },
     //
     //

@@ -24,14 +24,25 @@ export const Bilde = ({ src, alt, w, h, c, layout, of, op, id }) => {
 // !
 // ! Containers and sections
 // !
-export const SectionContainer = ({ children, id, farge, pt }) => {
-  const klassenavn = `bg-${farge} mx-auto align-center py-80 md:py-120 lg:py-160 `;
+export const Section = ({ children, id, farge, pt }) => {
+  const klassenavn = `bg-${farge} mx-auto align-center pb-56 md:pb-96 lg:pb-160 `;
   return (
     <section id={id} className={klassenavn}>
       {children}
     </section>
   );
 };
+export const SectionNav = ({ children, id, c }) => {
+  return (
+    <section
+      id={id}
+      className={`${c} mx-auto align-center py-32 md:py-56 lg:py-96`}
+    >
+      {children}
+    </section>
+  );
+};
+
 export const Section160 = ({ children, id, farge, pt }) => {
   const klassenavn = `bg-${farge} mx-auto align-center py-80 md:py-120 lg:py-160`;
   return (
@@ -210,7 +221,7 @@ export const FourTwoTwo = ({ c, children, id }) => {
 
 export const FourFourThree = ({ c, children, id }) => {
   return (
-    <div key={id} className={`${c} col-span-4 md:col-span-4 lg:col-span-6`}>
+    <div key={id} className={`${c} col-span-4 md:col-span-4 lg:col-span-3`}>
       {children}
     </div>
   );
