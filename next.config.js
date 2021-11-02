@@ -1,5 +1,5 @@
 module.exports = {
-  swcMinify: true,
+  swcMinify: true, //uses SWC instead of Terser for minyfying JavaScript
   images: {
     domains: ["images.ctfassets.net"],
     loader: "cloudinary",
