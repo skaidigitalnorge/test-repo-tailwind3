@@ -1,5 +1,10 @@
 import { NextSeo } from "next-seo";
-import { FourFourThree, Grid, Layout } from "../components/1_Small/Base";
+import {
+  FourEightTwelve,
+  FourFourThree,
+  Grid,
+  Layout,
+} from "../components/1_Small/Base";
 import {
   PrimaryButton,
   PrimaryButtonHref,
@@ -35,7 +40,12 @@ export default function Home() {
         }}
       />
       <Navbar />
-      <Layout></Layout>
+      <Layout>
+        <Grid>
+          <FourEightTwelve>test</FourEightTwelve>
+          <FourEightTwelve>test</FourEightTwelve>
+        </Grid>
+      </Layout>
       <Footer />
     </>
   );

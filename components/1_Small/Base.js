@@ -119,7 +119,7 @@ export const Layout = ({ children, c }) => {
 //
 //
 export const Grid = ({ children, c }) => {
-  const klasseNavn = `grid grid-cols-4 md:grid-cols-8 lg:grid-cols-12 gap-24 auto-rows-auto ${c}`;
+  const klasseNavn = `grid grid-cols-4 md:grid-cols-8 lg:grid-cols-12 gap-x-8 auto-rows-auto ${c}`;
   return <div className={klasseNavn}>{children}</div>;
 };
 
