@@ -45,6 +45,11 @@ module.exports = {
       neutral_900: "#1E1E1E",
       white: "#ffffff",
       black: "#000000",
+      danger_50: "#FEF2F2",
+      danger_300: "#93C%FD",
+      danger_500: "#EF4444",
+      danger_700: "#B91C1C",
+      danger_900: "#7F1D1D",
     },
     //
     // TODO  Set box shadow settings if the project has them. If not, delete line 31-33
