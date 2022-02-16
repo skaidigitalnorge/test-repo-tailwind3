@@ -18,11 +18,18 @@ module.exports = {
     // TODO Set the font families according to the design spec. For example:
     // sans: ["Poppins", "sans-serif"], for example
     fontFamily: {
-      sans: [],
+      sans: ["Open Sans"],
+      serif: ["Cormorant Garamond"],
     },
     //
     // TODO Configure the colors that do not have a hexcode already. Add all colors from the "color palette" section in the design
     colors: {
+      "gray-700": "#333333",
+      "brown-700": "#794f37",
+      "off-white": "rgba(255, 255, 255, .8)",
+      //
+      //
+      //
       primary_50: "#F8FAFC",
       primary_300: "#F1F5F9",
       primary_500: "#E2E8F0",
