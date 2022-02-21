@@ -1,69 +1,47 @@
-/* open-sans-regular - latin */
-@font-face {
-  font-family: "Open Sans";
-  font-style: normal;
-  font-weight: 400;
-  src: local(""),
-    url("/fonts/open-sans-v27-latin-regular.woff2") format("woff2"),
-    /* Chrome 26+, Opera 23+, Firefox 39+ */
-      url("/fonts/open-sans-v27-latin-regular.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
-/* open-sans-600 - latin */
-@font-face {
-  font-family: "Open Sans";
-  font-style: normal;
-  font-weight: 600;
-  src: local(""), url("/fonts/open-sans-v27-latin-600.woff2") format("woff2"),
-    /* Chrome 26+, Opera 23+, Firefox 39+ */
-      url("/fonts/open-sans-v27-latin-600.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
-/* open-sans-700 - latin */
-@font-face {
-  font-family: "Open Sans";
-  font-style: normal;
-  font-weight: 700;
-  src: local(""), url("/fonts/open-sans-v27-latin-700.woff2") format("woff2"),
-    /* Chrome 26+, Opera 23+, Firefox 39+ */
-      url("/fonts/open-sans-v27-latin-700.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
-
-/* cormorant-garamond-regular - latin */
-@font-face {
-  font-family: "Cormorant Garamond";
-  font-style: normal;
-  font-weight: 400;
-  src: local(""),
-    url("/fonts/cormorant-garamond-v14-latin-regular.woff2") format("woff2"),
-    /* Chrome 26+, Opera 23+, Firefox 39+ */
-      url("/fonts/cormorant-garamond-v14-latin-regular.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
-/* cormorant-garamond-600 - latin */
-@font-face {
-  font-family: "Cormorant Garamond";
-  font-style: normal;
-  font-weight: 600;
-  src: local(""),
-    url("/fonts/cormorant-garamond-v14-latin-600.woff2") format("woff2"),
-    /* Chrome 26+, Opera 23+, Firefox 39+ */
-      url("/fonts/cormorant-garamond-v14-latin-600.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
-/* cormorant-garamond-500 - latin */
-@font-face {
-  font-family: "Cormorant Garamond";
-  font-style: normal;
-  font-weight: 500;
-  src: local(""),
-    url("/fonts/cormorant-garamond-v14-latin-500.woff2") format("woff2"),
-    /* Chrome 26+, Opera 23+, Firefox 39+ */
-      url("/fonts/cormorant-garamond-v14-latin-500.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
-
 /*!* Makes tailwind work */
 @tailwind base;
+
+@tailwind components;
+@tailwind utilities;
+@layer base {
+  /* h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-sans;
+  }
+  h1 {
+    @apply text-h1;
+    @apply md:text-[32px];
+    @apply lg:text-[48px];
+    @apply font-bold;
+  }
+  h2 {
+    @apply text-[20px];
+    @apply md:text-[24px];
+    @apply lg:text-[40px];
+    @apply font-semibold;
+  }
+  h3 {
+    @apply text-[16px];
+    @apply md:text-[18px];
+    @apply lg:text-[20px];
+    @apply font-semibold;
+  }
+  p,
+  a {
+    @apply text-[16px];
+  }
+  a {
+    @apply: cursor-pointer;
+  } */
+}
+
 body {
   /* * Select font and swap for removing FOWT */
   font-family: Open Sans;
   font-display: swap;
+
   /* * User can't select text or copy content */
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none; /* Safari */
@@ -71,6 +49,7 @@ body {
   -moz-user-select: none; /* Old versions of Firefox */
   -ms-user-select: none; /* Internet Explorer/Edge */
   user-select: none; /* Non-prefixed version, currently
+  
   /* * Anti-aliasing to to make fonts smoother */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -79,40 +58,4 @@ body {
   -webkit-backface-visibility: hidden;
 }
 
-/* TODO Insert font styles from webfonts helper here.
-   TODO Remember to remove the .. in the import to get the import right  */
-
-@tailwind components;
-@tailwind utilities;
-
-/* TODO Change the settings to match the design */
-@layer base {
-  h1 {
-    @apply text-h2;
-    @apply lg:text-h1;
-    @apply font-bold;
-    @apply font-sans;
-  }
-  h2,
-  h3,
-  h4 {
-    @apply font-serif;
-  }
-  h2 {
-    @apply text-h3;
-    @apply lg:text-h2;
-    @apply font-semibold;
-  }
-  h3 {
-    @apply text-h4;
-    @apply lg:text-h3;
-    @apply font-semibold;
-  }
-  p,
-  a {
-    @apply text-body_regular;
-  }
-  a {
-    @apply: cursor-pointer;
-  }
-}
+/* ? Insert webfonts below */

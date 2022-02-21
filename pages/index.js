@@ -1,19 +1,6 @@
 import { NextSeo } from "next-seo";
-import {
-  FourEightTwelve,
-  FourFourThree,
-  Grid,
-  Layout,
-} from "../components/1_Small/Base";
-import {
-  PrimaryButton,
-  PrimaryButtonHref,
-  SecondaryButton,
-  SecondaryButtonHref,
-} from "../components/1_Small/Buttons";
-import { Footer } from "../components/2_Big/Navigation/Footer";
-import { Navbar } from "../components/2_Big/Navigation/Navbar";
-import Image from "next/image";
+import { Grid, Layout } from "../components/utils/base";
+import { SchemaOrganization } from "../components/schema/schema-organization";
 
 export default function Home() {
   return (
@@ -39,14 +26,10 @@ export default function Home() {
           cardType: "summary_large_image",
         }}
       />
-      <Navbar />
+      <SchemaOrganization />
       <Layout>
-        <Grid>
-          <FourEightTwelve>test</FourEightTwelve>
-          <FourEightTwelve>test</FourEightTwelve>
-        </Grid>
+        <Grid>jeg jeg jeg </Grid>
       </Layout>
-      <Footer />
     </>
   );
 }

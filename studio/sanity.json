@@ -1,10 +1,10 @@
 {
   "root": true,
   "project": {
-    "name": "Olaug Gimse Storrø"
+    "name": "bliss_flowerbox"
   },
   "api": {
-    "projectId": "f72ua31l",
+    "projectId": "6ucm7345",
     "dataset": "production"
   },
   "plugins": [
