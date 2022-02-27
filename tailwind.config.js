@@ -171,10 +171,10 @@ module.exports = {
         auto: "auto",
       },
       minHeight: {
-        100: "100vh",
+        100: "100%",
       },
       minWidth: {
-        100: "100vw",
+        100: "100%",
       },
       height: {
         0: "0px",

@@ -1,6 +1,7 @@
 import { NextSeo } from "next-seo";
-import { Grid, Layout } from "../components/utils/base";
+import { FourEightTwelve, Grid, Layout } from "../components/utils/base";
 import { SchemaOrganization } from "../components/schema/schema-organization";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -28,7 +29,16 @@ export default function Home() {
       />
       <SchemaOrganization />
       <Layout>
-        <Grid>jeg jeg jeg </Grid>
+        <Grid>
+          Dette er main page content
+          <FourEightTwelve>
+            <Link href="/test">
+              <a className="bg-black text-white px-24 py-16 flex">
+                Denne knappen tar deg til test
+              </a>
+            </Link>
+          </FourEightTwelve>
+        </Grid>
       </Layout>
     </>
   );

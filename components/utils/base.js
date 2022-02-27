@@ -1,4 +1,6 @@
 import Image from "next/image";
+import { motion } from "framer-motion";
+import { NextSeo } from "next-seo";
 
 // TODO: Add the path for the cloudinary account for this project
 const myLoader = ({ src, width, quality }) => {
@@ -104,13 +106,33 @@ export const HeroContainerUtenPadding = ({ children, id, farge, pt }) => {
   );
 };
 
-export const Layout = ({ children, c }) => {
+export const Layout = ({ children, c, title, description }) => {
+  const variants = {
+    initial: { opacity: 0, transition: { duration: 2 } },
+    animate: {
+      opacity: 1,
+      transition: { duration: 1.5, ease: [0.87, 0.5, 0, 0.13] },
+    },
+    exit: { opacity: 0, transition: { duration: 3 } },
+  };
+
   return (
-    <div
-      className={`container mx-auto w-screen md:max-w lg:max-w xl:max-w ${c}`}
-    >
-      <div className="max-w-95 mx-auto align-center">{children}</div>
-    </div>
+    <>
+      <NextSeo
+        title={title}
+        description={description}
+        openGraph={(title, description)}
+      />
+      <motion.main
+        initial="initial"
+        animate="animate"
+        exit="exit"
+        variants={variants}
+        className={`container mx-auto w-screen md:max-w lg:max-w xl:max-w ${c}`}
+      >
+        <div className="max-w-95 mx-auto align-center">{children}</div>
+      </motion.main>
+    </>
   );
 };
 //
