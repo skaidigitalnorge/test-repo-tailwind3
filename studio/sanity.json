@@ -11,11 +11,14 @@
     "@sanity/base",
     "@sanity/default-layout",
     "@sanity/default-login",
-    "@sanity/desk-tool"
+    "@sanity/desk-tool",
+    "social-preview"
   ],
   "env": {
     "development": {
-      "plugins": ["@sanity/vision"]
+      "plugins": [
+        "@sanity/vision"
+      ]
     }
   },
   "parts": [
@@ -26,6 +29,10 @@
     {
       "name": "part:@sanity/desk-tool/structure",
       "path": "./deskStructure.js"
+    },
+    {
+      "implements": "part:@sanity/base/theme/variables/override-style",
+      "path": "index.css"
     }
   ]
 }

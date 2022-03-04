@@ -17,6 +17,10 @@ import companyInfo from "./documents/companyInfo";
 import settingsGeneral from "./documents/settings-general";
 import footer from "./documents/footer";
 import productVariant from "./documents/product-variant";
+import redirect from "./documents/redirect";
+import linkInternal from "./objects/linkInternal";
+import collections from "./documents/collections";
+import upsellCollections from "./documents/upsellCollections";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -30,6 +34,7 @@ export default createSchema({
     richImage,
     metaInfo,
     link,
+    linkInternal,
     linkList,
 
     // Modules
@@ -42,7 +47,9 @@ export default createSchema({
     productVariant,
     navbar,
     footer,
-
+    redirect,
+    collections,
+    upsellCollections,
     companyInfo,
     settingsGeneral,
 

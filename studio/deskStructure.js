@@ -1,16 +1,20 @@
+import SocialPreview from "part:social-preview/component";
+
 import S from "@sanity/desk-tool/structure-builder";
-import { navbar } from "./desk/navbar";
+import { modules } from "./desk/navbar";
 import { page } from "./desk/page";
 import { product } from "./desk/product";
 import { settings } from "./desk/settings";
+import { collections } from "./desk/collections";
 
 export default () => {
   return S.list().title("Gjør endringer her").items([
     page,
     S.divider(),
     product,
+    collections,
     S.divider(),
-    navbar,
+    modules,
     S.divider(),
     settings,
     S.divider(),

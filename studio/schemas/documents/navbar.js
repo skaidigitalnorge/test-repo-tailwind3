@@ -10,11 +10,17 @@ export default {
       description: "",
       of: [
         {
-          title: "Lenke",
+          title: "Eksternlenke",
           name: "link",
           type: "link",
           description:
             "Hvis du skal ta noen direkte til en side, så velg denne",
+        },
+        {
+          title: "Internlenke",
+          name: "internalLink",
+          type: "internalLink",
+          description: "Bruk denne hvis du skal linke til en egen side",
         },
         {
           title: "Nedtrekksliste",

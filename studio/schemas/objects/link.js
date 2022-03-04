@@ -1,7 +1,11 @@
+import { Icon } from "../../icon";
+import React from "react";
+
 export default {
   title: "Lenke",
   name: "link",
   type: "object",
+  icon: () => <Icon name="linkExternal" />,
   fields: [
     {
       name: "href",

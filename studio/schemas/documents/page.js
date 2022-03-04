@@ -19,8 +19,11 @@ export default {
       title: "Slug",
       name: "slug",
       type: "slug",
-      description:
-        "Dette er det som vises i søkefeltet etter blissflowerbox.com/",
+      description: "Påkrevd",
+      options: {
+        source: "title",
+        maxLength: 96,
+      },
     },
 
     {
@@ -40,7 +43,15 @@ export default {
   preview: {
     select: {
       title: `title`,
-      // subtitle: "slug",
+      subtitle: "slug",
     },
   },
+  prepare({ title = "Untitled", slug = {} }) {
+    const path = `/${slug.current}`;
+    return {
+      title,
+      subtitle: slug.current ? path : "(ikke satt slug)",
+    };
+  },
 };
+

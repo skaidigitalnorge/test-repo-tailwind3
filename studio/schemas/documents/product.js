@@ -8,6 +8,7 @@ export default {
       name: "upsells",
       title: "Upsells",
     },
+    { name: "modules", title: "Moduler" },
   ],
   fields: [
     {
@@ -24,6 +25,12 @@ export default {
       description:
         "Gi en god beskrivelse av fordelene og egenskapene med produktet her",
     },
-    { title: "Moduler", name: "modules", type: "array", of: [{ type: "faq" }] },
+    {
+      title: "Moduler",
+      name: "modules",
+      type: "array",
+      group: "modules",
+      of: [{ type: "faq" }],
+    },
   ],
 };

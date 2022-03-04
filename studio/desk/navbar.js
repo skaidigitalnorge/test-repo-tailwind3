@@ -1,8 +1,13 @@
 import S from "@sanity/desk-tool/structure-builder";
+import { Icon } from "../icon";
+import React from "react";
 
 // prettier-ignore
-export const navbar = S.listItem()
+export const modules = S.listItem()
   .title('Moduler')
+  .icon(() => (
+    <Icon name="grid"/>
+  ))
   .child(
     S.list()
       .title('Informasjon om selskapet')
@@ -10,6 +15,9 @@ export const navbar = S.listItem()
         S.listItem()
         .title('Navigasjon')
         .schemaType('navbar')
+        .icon(() => (
+          <Icon name="hamburger"/>
+        ))
         .child(
           S.editor()
           .schemaType('navbar')
@@ -24,7 +32,6 @@ export const navbar = S.listItem()
             .schemaType('footer')
             .documentId('footer')
             ),
-            
             S.divider(),
           ])
   )
