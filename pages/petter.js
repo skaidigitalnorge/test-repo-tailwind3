@@ -1,43 +1,29 @@
-import { assertValidExecutionArguments } from "graphql/execution/execute";
-import { useState } from "react";
-
-// import { getProduct } from '../test/getProducts'
-
-// const session = await Shopify.Utils.loadCurrentSession(req, res);
-// const client = new Shopify.Clients.Graphql(session.shop, session.accessToken);
-// const response = await client.query({data: '{your_query}'});
+import {
+  getAllProducts,
+  getProductByHandle,
+  getProductsByCollection,
+} from "../lib/shopify";
 
 function petter() {
-  const [produkter, setProdukter] = useState(false);
-  // const renderData = async() => {
-  //     setProdukter(!produkter);
-  //     const ut = await getProduct();
-  //     console.log(ut)
-  //     const ut2 = ut?.products?.edges?.map((etProdukt) => {
-  //         <div>{etProdukt.node.handle}</div>
-  //     })
-  //     if (produkter) {
-  //         return ut2;
-  //     } else {
-  //         return null;
-  //     }
-  // }
   return (
     <div className="m-40">
       <div>
-        <button onClick={() => getCustomers()}>Print customers</button>
+        <button onClick={() => getProducts()}>Print all products</button>
       </div>
       <div>
-        <button onClick={() => getTesten()}>Test</button>
+        <button onClick={() => getProduct("enda-finere-blomster")}>
+          Print a product by handle
+        </button>
       </div>
       <div>
-        <button>Add to cart</button>
+        <button onClick={() => getProductsCollection("luer", 5)}>
+          Print a collection by handle
+        </button>
       </div>
       <div>
-        <button onClick={() => getCart()}>Print cart</button>
-      </div>
-      <div>
-        <button onClick={() => getProduct()}>Print products</button>
+        <button onClick={() => regnUt(100)}>
+          Print a collection by handle
+        </button>
       </div>
     </div>
   );
@@ -45,35 +31,46 @@ function petter() {
 
 export default petter;
 
-const getProduct = async () => {
-  const data = await fetch("http://localhost:3000/api/shopify/GetAllProducts");
-  const jsonData = await data.json();
+// Dette er Storefront API calls. Under kommer alle som er lagt til.
+// Om du mangler noen fields, gi meg beskjed så legger jeg til.
 
-  console.log(jsonData.data.products.edges);
+// Syntaxen har denne strukturen som de er lagt til. Den kan også brukes i "getStaticProps" der det er ønskelig.
+// Følg da standard struktur.
 
-  return jsonData;
+// Denne under henter de 250 første produktene
+const getProducts = async () => {
+  const data = await getAllProducts();
+
+  console.log(data);
+
+  return data;
 };
 
-const getCart = async () => {
-  const data = await fetch("http://localhost:3000/api/shopify/GetCart");
-  const jsonData = await data.json();
-  console.log(jsonData);
-  // console.log(jsonData.data.products.edges);
-  return jsonData;
+// Henter et produkt basert på "handle". Navn: "Fine blomster" = handle: "fine-blomster".
+// Kan se ut som handle kan brukes som slug
+const getProduct = async (handle) => {
+  const data = await getProductByHandle(handle);
+
+  console.log(data);
+
+  return data;
 };
 
-const getCustomers = async () => {
-  const data = await fetch("http://localhost:3000/api/shopify/GetAllCustomers");
-  const jsonData = await data.json();
-  console.log(jsonData);
+const getProductsCollection = async (collection, number) => {
+  const data = await getProductsByCollection(collection, number);
 
-  return jsonData;
+  console.log(data);
+
+  return data;
 };
 
-const getTesten = async () => {
-  const data = await fetch("http://localhost:3000/api/shopify/NyVersjon");
-  const jsonData = await data.json();
-  console.log(jsonData.body.data.customers.edges);
+const regnUt = (maks) => {
+  let sum = 0;
 
-  return jsonData.body.data.customers;
+  for (let i = 0; i < maks; i++) {
+    sum += i;
+  }
+  console.log(sum);
+
+  return sum;
 };
