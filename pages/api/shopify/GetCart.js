@@ -1,6 +1,3 @@
-//
-import { gql } from "@apollo/client";
-
 const domain = process.env.NEXT_PUBLIC_SHOPIFY_URL;
 const storefrontAccessToken = process.env.SHOPIFY_STOREFRONT_ACCESSTOKEN;
 
@@ -51,7 +48,7 @@ export default async function handler(req, res) {
     const data = await fetch(URL, options);
     const jsonData = await data.json();
 
-    res.status(200).json(jsonData)
+    res.status(200).json(jsonData);
     // return jsonData;
   } catch (error) {
     console.log(error);
