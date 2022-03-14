@@ -223,7 +223,7 @@ export const Icon = (props) => {
       <title id={`${name.replace(/\s/g, "").toLowerCase()}-${id}`}>
         {name}
       </title>
-      {getIcon(name, "#81a76d", colorSecondary)}
+      {getIcon(name, "#F3BECD", colorSecondary)}
     </svg>
   );
 };

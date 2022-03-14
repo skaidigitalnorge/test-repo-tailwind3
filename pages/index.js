@@ -2,6 +2,7 @@ import { NextSeo } from "next-seo";
 import { FourEightTwelve, Grid, Layout } from "../components/utils/base";
 import { SchemaOrganization } from "../components/schema/schema-organization";
 import Link from "next/link";
+import { Icon } from "../components/icon";
 
 export default function Home() {
   return (

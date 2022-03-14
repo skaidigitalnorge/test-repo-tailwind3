@@ -4,7 +4,26 @@ import {
   getProductsByCollection,
 } from "../lib/shopify";
 
+
 function petter() {
+  // async function transform(product) {
+  //   const singleProduct = {
+  //     _id: product.node.title,
+  //     _type: "product",
+  //     productTitle: product.node.title,
+  //   };
+
+  //   return singleProduct;
+  // }
+
+  // const products = getAllProducts();
+  // const productsJSON = products.json();
+  // const mappedProducts = productsJSON.map(transform);
+  // const allProductsWritten = mappedProducts.map((product) =>
+  //   client.createOrReplace(product)
+  // );
+  // allProductsWritten();
+
   return (
     <div className="m-40">
       <div>
