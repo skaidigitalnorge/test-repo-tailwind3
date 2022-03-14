@@ -2,8 +2,8 @@ import {
   getAllProducts,
   getProductByHandle,
   getProductsByCollection,
+  updateSanity,
 } from "../lib/shopify";
-
 
 function petter() {
   // async function transform(product) {
@@ -40,8 +40,8 @@ function petter() {
         </button>
       </div>
       <div>
-        <button onClick={() => regnUt(100)}>
-          Print a collection by handle
+        <button onClick={() => updateSanityStudio()}>
+          Update sanity studio
         </button>
       </div>
     </div>
@@ -83,13 +83,7 @@ const getProductsCollection = async (collection, number) => {
   return data;
 };
 
-const regnUt = (maks) => {
-  let sum = 0;
-
-  for (let i = 0; i < maks; i++) {
-    sum += i;
-  }
-  console.log(sum);
-
-  return sum;
+const updateSanityStudio = async () => {
+  const data = await fetch("http://localhost:3000/api/shopify/updateSanity");
+  // await updateSanity();
 };
