@@ -88,14 +88,14 @@ export const HeroContainer = ({ children, id, farge, pt, c }) => {
   );
 };
 
-export const SameContainer = ({ children, id, farge, pt }) => {
-  const klassenavn = `bg-${farge} mx-auto align-center pt-40 md:pt-56 lg:pt-80 pb-40 md:pb-56 lg:pb-80`;
-  return (
-    <section id={id} className={klassenavn}>
-      <Element name={id}>{children}</Element>
-    </section>
-  );
-};
+// export const SameContainer = ({ children, id, farge, pt }) => {
+//   const klassenavn = `bg-${farge} mx-auto align-center pt-40 md:pt-56 lg:pt-80 pb-40 md:pb-56 lg:pb-80`;
+//   return (
+//     <section id={id} className={klassenavn}>
+//       <Element name={id}>{children}</Element>
+//     </section>
+//   );
+// };
 
 export const HeroContainerUtenPadding = ({ children, id, farge, pt }) => {
   const klassenavn = `bg-${farge} mx-auto align-center `;
