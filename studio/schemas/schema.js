@@ -10,7 +10,7 @@ import richImage from "./richImage";
 import sectionTitle from "./modules/section-title";
 import metaInfo from "./objects/metaInfo";
 import product from "./documents/product";
-import link from "./objects/link";
+import link from "./objects/linkExternal";
 import navbar from "./documents/navbar";
 import linkList from "./objects/linkList";
 import companyInfo from "./documents/companyInfo";
@@ -21,6 +21,10 @@ import redirect from "./documents/redirect";
 import linkInternal from "./objects/linkInternal";
 import collections from "./documents/collections";
 import upsellCollections from "./documents/upsellCollections";
+import infoBanner from "./documents/infoBanner";
+import socialMediaLinks from "./documents/socialMediaLinks";
+import simpleText from "./objects/simpleText";
+import linkExternal from "./objects/linkExternal";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -31,9 +35,10 @@ export default createSchema({
   types: schemaTypes.concat([
     // Objects
     richText,
+    simpleText,
     richImage,
     metaInfo,
-    link,
+    linkExternal,
     linkInternal,
     linkList,
 
@@ -52,6 +57,8 @@ export default createSchema({
     upsellCollections,
     companyInfo,
     settingsGeneral,
+    infoBanner,
+    socialMediaLinks,
 
     // Singletons
   ]),

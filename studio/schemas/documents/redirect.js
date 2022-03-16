@@ -26,9 +26,4 @@ export default {
       //   destination: destination,
     },
   },
-  //   prepare(source, destination) {
-  //     return {
-  //       destination,
-  //     };
-  //   },
 };

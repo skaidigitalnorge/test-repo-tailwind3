@@ -6,6 +6,7 @@ export default {
     {
       name: "seo",
       title: "SEO",
+      default: true,
     },
   ],
   fields: [
@@ -16,16 +17,13 @@ export default {
       description: "Denne brukes bare internt. Den vises ikke på nettsiden",
     },
     {
-      title: "Slug",
+      title: "Adresse til side",
       name: "slug",
       type: "slug",
-      description: "Påkrevd",
-
+      description: "Vises typisk i Google-søk og øverst i nettleservinduet",
       options: {
         source: "title",
         maxLength: 96,
-        slugify: (input) =>
-          input.toLowerCase().replace(/\s+/g, "-").slice(0, 200),
       },
     },
 
@@ -45,15 +43,15 @@ export default {
   ],
   preview: {
     select: {
-      title: `title`,
-      subtitle: "slug",
+      title: "title",
+      // subtitle: "slug",
     },
   },
-  prepare({ title = "Untitled", slug = {} }) {
-    const path = `/${slug.current}`;
-    return {
-      title,
-      subtitle: slug.current ? path : "(ikke satt slug)",
-    };
-  },
+  // prepare({ title = "Untitled", slug = {} }) {
+  //   const path = `/${slug.current}`;
+  //   return {
+  //     title,
+  //     subtitle: slug.current ? path : "(ikke satt slug)",
+  //   };
+  // },
 };

@@ -11,8 +11,8 @@ export default {
       of: [
         {
           title: "Lenke",
-          name: "link",
-          type: "link",
+          name: "linkExternal",
+          type: "linkExternal",
           description:
             "Hvis du skal ta noen direkte til en side, så velg denne",
         },

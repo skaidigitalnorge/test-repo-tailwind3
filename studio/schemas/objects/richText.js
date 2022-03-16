@@ -35,9 +35,9 @@ export default {
         ],
         // annotations: [
         //   {
-        //     title: "Lenke",
-        //     name: "link",
-        //     type: "link",
+        //     title: "Lenke til en ekstern side",
+        //     name: "linkExternal",
+        //     type: "linkExternal",
         //   },
         // ],
       },

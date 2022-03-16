@@ -13,7 +13,7 @@ export default {
       title: "Nedtrekksgjenstander",
       name: "dropdownItems",
       type: "array",
-      of: [{ type: "link" }],
+      of: [{ type: "linkExternal" }],
       description: "Description",
     },
   ],

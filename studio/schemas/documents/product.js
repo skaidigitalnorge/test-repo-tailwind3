@@ -3,13 +3,14 @@ export default {
   name: "product",
   type: "document",
   groups: [
-    { name: "seo", title: "Søkemotoroptimalisering" },
+    { name: "content", title: "Innhold", default: true },
     {
       name: "upsells",
       title: "Upsells",
     },
     { name: "modules", title: "Moduler" },
     { name: "mersalg", title: "Mersalg" },
+    { name: "seo", title: "SEO" },
   ],
   fieldsets: [
     {
@@ -26,6 +27,7 @@ export default {
       type: "string",
       readOnly: true,
       fieldset: "shopify",
+      group: "content",
     },
     {
       title: "Tilgjengelig?",
@@ -33,6 +35,7 @@ export default {
       type: "string",
       readOnly: true,
       fieldset: "shopify",
+      group: "content",
     },
 
     {
@@ -41,6 +44,7 @@ export default {
       type: "string",
       description:
         "Hvis du ønsker å bruke en annen produkttittel enn den fra Shopify, kan du overstyre den ved å skrive noe inn i dette feltet. Hvis ikke, la den stå tom",
+      group: "content",
     },
     {
       title: "Produktbeskrivelse",
@@ -48,6 +52,7 @@ export default {
       type: "richText",
       description:
         "Gi en god beskrivelse av fordelene og egenskapene med produktet her",
+      group: "content",
     },
     {
       title: "Produktbilder",
@@ -59,6 +64,7 @@ export default {
       options: {
         layout: "grid",
       },
+      group: "content",
     },
     {
       title: "Anbefalte produkter",
@@ -73,6 +79,16 @@ export default {
       group: "mersalg",
     },
     {
+      title: "Mersalgkolleksjon",
+      name: "upsellCollection",
+      type: "reference",
+      description:
+        "Velg hvilken mersalgskolleksjon du ønsker å vise når du legger til dette produktet i handlekurven",
+      to: [{ type: "upsellCollection" }],
+      group: "mersalg",
+    },
+
+    {
       title: "Moduler",
       name: "modules",
       type: "array",
@@ -80,6 +96,13 @@ export default {
       description:
         "Her kan du legge til ekstra innhold til produktet. Det kan være ofte stilte spørsmål, osv.",
       of: [{ type: "faq" }],
+      group: "modules",
+    },
+    {
+      title: "Søkemotoroptimalisering",
+      name: "seo",
+      type: "metaInfo",
+      group: "seo",
     },
   ],
   preview: {

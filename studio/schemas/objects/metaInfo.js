@@ -4,6 +4,13 @@ export default {
   type: "object",
   fields: [
     {
+      title: "Skal siden vises på Google?",
+      name: "isIndexed",
+      type: "boolean",
+      initialValue: true,
+    },
+
+    {
       title: "Metatittel",
       name: "metaTitle",
       type: "string",

@@ -3,12 +3,11 @@ import { Icon } from "../icon";
 import React from "react";
 
 // prettier-ignore
-export const product = S.listItem()
-  .title('Produkt')
+export const productVariants = S.listItem()
+  .title('Produktvarianter')
   .icon(() => (roseIcon))
   .child(
-    S.documentTypeList('product')
-      .title("Produkter")
+    S.documentTypeList('productVariant')
   )
 
 const roseIcon = (

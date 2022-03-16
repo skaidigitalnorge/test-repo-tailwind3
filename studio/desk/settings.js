@@ -1,22 +1,23 @@
 import S from "@sanity/desk-tool/structure-builder";
 import { Icon } from "../icon";
 import React from "react";
+import { BsToggles } from "react-icons/bs";
+import { GrFacebook } from "react-icons/gr";
+import { FaGlobeAfrica } from "react-icons/fa";
+import { MdAddBusiness } from "react-icons/md";
+import { GiDirectionSign } from "react-icons/gi";
 
 // prettier-ignore
 export const settings = S.listItem()
   .title("Innstillinger")
-  .icon(() => (
-    <Icon name="settings"/>
-  ))
+  .icon(BsToggles)
   .child(
     S.list()
-      .title("Alle innstillinger her")
+      .title("Innstillinger")
       .items([
         S.listItem()
           .title("Info om selskapet")
-          .icon(() => (
-            <Icon name="info" color="black"/>
-          ))
+          .icon(MdAddBusiness)
           .schemaType("companyInfo")
           .child(
             S.editor().schemaType("companyInfo").documentId("companyInfo")
@@ -24,9 +25,7 @@ export const settings = S.listItem()
         S.divider(),
         S.listItem()
           .title("Globale innstillinger")
-          .icon(() => (
-            <Icon name="settings" color="black"/>
-          ))
+          .icon(FaGlobeAfrica)
           .schemaType("settingsGeneral")
           .child(
             S.editor()
@@ -35,10 +34,19 @@ export const settings = S.listItem()
           ),
         S.divider(),
         S.listItem()
-          .title("Redirects")
-          .icon(() => (
-            <Icon name="redirect"/>
-          ))
+          .title("Sosiale medier")
+          .icon(GrFacebook)
+          .schemaType("socialMediaLinks")
+          .child(
+            S.editor()
+              .title("SoMe-lenker")
+              .schemaType("socialMediaLinks")
+              .documentId("socialMediaLinks")
+          ),
+        S.divider(),
+        S.listItem()
+          .title("Omdirigeringer")
+          .icon(GiDirectionSign)
           .schemaType("redirect")
           .child(
             S.documentTypeList('redirect')

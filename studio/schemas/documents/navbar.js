@@ -11,15 +11,15 @@ export default {
       of: [
         {
           title: "Eksternlenke",
-          name: "link",
-          type: "link",
+          name: "linkExternal",
+          type: "linkExternal",
           description:
             "Hvis du skal ta noen direkte til en side, så velg denne",
         },
         {
           title: "Internlenke",
-          name: "internalLink",
-          type: "internalLink",
+          name: "linkInternal",
+          type: "linkInternal",
           description: "Bruk denne hvis du skal linke til en egen side",
         },
         {
