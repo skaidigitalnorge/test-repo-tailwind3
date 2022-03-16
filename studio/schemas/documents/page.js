@@ -20,9 +20,12 @@ export default {
       name: "slug",
       type: "slug",
       description: "Påkrevd",
+
       options: {
         source: "title",
         maxLength: 96,
+        slugify: (input) =>
+          input.toLowerCase().replace(/\s+/g, "-").slice(0, 200),
       },
     },
 
@@ -54,4 +57,3 @@ export default {
     };
   },
 };
-

@@ -9,6 +9,7 @@ export default {
       title: "Upsells",
     },
     { name: "modules", title: "Moduler" },
+    { name: "mersalg", title: "Mersalg" },
   ],
   fieldsets: [
     {
@@ -20,14 +21,22 @@ export default {
   ],
   fields: [
     {
-      title: "Product Title",
+      title: "Produktnavn",
       name: "productTitle",
       type: "string",
       readOnly: true,
       fieldset: "shopify",
     },
     {
-      title: "Produkttittel",
+      title: "Tilgjengelig?",
+      name: "productAvailability",
+      type: "string",
+      readOnly: true,
+      fieldset: "shopify",
+    },
+
+    {
+      title: "Alternativ tittel",
       name: "replacementTitle",
       type: "string",
       description:
@@ -41,11 +50,43 @@ export default {
         "Gi en god beskrivelse av fordelene og egenskapene med produktet her",
     },
     {
+      title: "Produktbilder",
+      name: "imagesProduct",
+      type: "array",
+      description:
+        "Bilder du laster opp her, vil vises på alle variantene. Du kan overskride dem ved å legge til bilder under 'produktvarianter'",
+      of: [{ type: "richImage" }],
+      options: {
+        layout: "grid",
+      },
+    },
+    {
+      title: "Anbefalte produkter",
+      name: "reccommendedProducts",
+      type: "array",
+      description:
+        "Her velger du hvilke produkter som blir vist under 'Anbefalte produkter'",
+      of: [{ type: "product" }],
+      options: {
+        layout: "grid",
+      },
+      group: "mersalg",
+    },
+    {
       title: "Moduler",
       name: "modules",
       type: "array",
       group: "modules",
+      description:
+        "Her kan du legge til ekstra innhold til produktet. Det kan være ofte stilte spørsmål, osv.",
       of: [{ type: "faq" }],
     },
   ],
+  preview: {
+    select: {
+      title: "productTitle",
+      subtitle: "parentProduct.productTitle",
+      media: "imagesProduct.0.image",
+    },
+  },
 };
