@@ -4,8 +4,10 @@ import {
   getProductsByCollection,
   updateSanity,
 } from "../lib/shopify";
+import { sanityClient } from "../lib/sanity";
 
 function petter() {
+  // console.log(first);
   // async function transform(product) {
   //   const singleProduct = {
   //     _id: product.node.title,
@@ -42,6 +44,11 @@ function petter() {
       <div>
         <button onClick={() => updateSanityStudio()}>
           Update sanity studio
+        </button>
+      </div>
+      <div>
+        <button onClick={() => getSanityDokuments()}>
+          print all sanity documents
         </button>
       </div>
     </div>
@@ -86,4 +93,15 @@ const getProductsCollection = async (collection, number) => {
 const updateSanityStudio = async () => {
   const data = await fetch("http://localhost:3000/api/shopify/updateSanity");
   // await updateSanity();
+};
+
+const getSanityDokuments = async () => {
+  const test = await sanityClient.fetch('*[_type == "product"]');
+  const alleDokumenter = await sanityClient.getDocument(
+    "Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc1MTExNzk4NTQwNTM="
+      .slice(0, -1)
+      .toLowerCase()
+  );
+  console.log(alleDokumenter);
+  console.log(test);
 };
