@@ -22,9 +22,6 @@ export default async function handler(req, res) {
     });
   });
 
-  console.log("Her er alle variants");
-  console.log(mappedVariantArray);
-
   // Lager eller oppdaterer produktvarianter
   mappedVariantArray.map((productVariant) => {
     sanityClient.createOrReplace(productVariant);
@@ -53,6 +50,5 @@ function transformVariants(variant, parentId) {
       _ref: parentId,
     },
   };
-  console.log("Id = " + productVariant._id);
   return productVariant;
 }
