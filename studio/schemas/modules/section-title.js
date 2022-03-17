@@ -1,9 +1,12 @@
+import { MdOutlineTitle } from "react-icons/md";
+
 const categoryName = "Seksjonstittel";
 
 export default {
   title: "Seksjonstittel",
   name: "sectionTitle",
   type: "object",
+  icon: MdOutlineTitle,
   fields: [
     {
       title: "Tittel",

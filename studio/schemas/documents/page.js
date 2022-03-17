@@ -1,13 +1,16 @@
+import { MdWeb } from "react-icons/md";
+
 export default {
   title: "Page",
   name: "page",
   type: "document",
+  icon: MdWeb,
   groups: [
     {
       name: "seo",
       title: "SEO",
-      default: true,
     },
+    { name: "modules", title: "Moduler", default: true },
   ],
   fields: [
     {
@@ -39,19 +42,19 @@ export default {
       name: "faq",
       type: "array",
       of: [{ type: "faq" }, { type: "sectionTitle" }],
+      group: "modules",
     },
   ],
   preview: {
     select: {
       title: "title",
-      // subtitle: "slug",
+      subtitle: "slug.current",
+    },
+    prepare({ title, subtitle }) {
+      return {
+        title,
+        subtitle: `/${subtitle}`,
+      };
     },
   },
-  // prepare({ title = "Untitled", slug = {} }) {
-  //   const path = `/${slug.current}`;
-  //   return {
-  //     title,
-  //     subtitle: slug.current ? path : "(ikke satt slug)",
-  //   };
-  // },
 };

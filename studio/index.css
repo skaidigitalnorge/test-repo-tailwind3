@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap");
+
 /* Fjerner alle indenteringer av objects man henter fra andre objekt. */
 :global([data-as="fieldset"] [data-as="div"][data-ui="Box"]) {
   border: 0 !important;
@@ -5,8 +7,6 @@
 }
 
 /* Fra hull */
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap");
-
 :root {
   --brand-primary: #f3becd;
   --brand-primary--inverted: black;

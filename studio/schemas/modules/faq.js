@@ -1,7 +1,10 @@
+import { BsQuestionSquare } from "react-icons/bs";
+
 export default {
   title: "Ofte stilte spørsmål",
   name: "faq",
   type: "object",
+  icon: BsQuestionSquare,
   fields: [
     {
       title: "Spørsmål",

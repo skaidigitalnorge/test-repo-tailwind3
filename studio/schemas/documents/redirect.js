@@ -20,10 +20,4 @@ export default {
       initialValue: () => true,
     },
   ],
-  preview: {
-    select: {
-      //   source: source,
-      //   destination: destination,
-    },
-  },
 };
