@@ -114,7 +114,7 @@ const initDelete = async (shopifyData) => {
 // Transformerer shopifydataen til data sanity kan lese. Denne kan utvides i takt med ønsket fields
 function transform(product) {
   const singleProduct = {
-    _id: product.id.slice(0, -1).toLowerCase(),
+    _id: `product-${product.id}`,
     _type: "product",
     productTitle: product.title,
     productId: product.id,
