@@ -58,11 +58,36 @@ function petter() {
           Test av manuel sync cal
         </button>
       </div>
+      <div>
+        <button onClick={() => testCreate()}>Test av Create response</button>
+      </div>
     </div>
   );
 }
 
 export default petter;
+
+const testCreate = async (req, res) => {
+  const input = {
+    id: "7880387967896789322900",
+    title: "Test av ny Create",
+  };
+  const result = await sanityClient.createOrReplace(transform(input));
+  console.log(result);
+
+  return result;
+};
+
+function transform(product) {
+  const singleProduct = {
+    _id: product.id,
+    _type: "product",
+    productTitle: product.title,
+    productId: product.id,
+  };
+
+  return singleProduct;
+}
 
 // Dette er Storefront API calls. Under kommer alle som er lagt til.
 // Om du mangler noen fields, gi meg beskjed så legger jeg til.
