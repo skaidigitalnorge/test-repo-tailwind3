@@ -1,6 +1,17 @@
 import getRawBody from "raw-body";
 import crypto from "crypto";
-import { sanityClient } from "../../../lib/sanity";
+import sanityClient from "@sanity/client";
+
+// import { sanityClient } from "../../../lib/sanity";
+
+const sanity = sanityClient({
+  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
+  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET,
+  token:
+    "skvAc1RNcYnP5j2e6aX2CtJJ9VKU6IUUxfiZy9hoxDuY3gntfwX5UqmLWOBnucUDRslNLCsvc6hd1FEDJ3pG4aiHoRiV1RwE4r3vFXHuMpmDABTOEOYpYbySSAtQq3S7xlJ53JOaxEmEIk5nTjTZGNs5xjrD0SILEdQ6FP6xmWCD3vkDCn6W",
+  apiVersion: "2021-03-25",
+  useCdn: false,
+});
 
 // --------------------------------------------
 // -------------- Main funksjon ---------------
@@ -83,7 +94,7 @@ const initCreateOrReplace = async (shopifyData) => {
   );
 
   try {
-    await sanityClient.createOrReplace(transform(shopifyData));
+    await sanity.createOrReplace(transform(shopifyData));
     return true;
   } catch (error) {
     console.log("Error:");
@@ -98,7 +109,7 @@ const initDelete = async (shopifyData) => {
   );
 
   try {
-    await sanityClient.delete(shopifyData.id);
+    await sanity.delete(shopifyData.id);
     return true;
   } catch (error) {
     console.log("Error:");
