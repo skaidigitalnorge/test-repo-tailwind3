@@ -1,11 +1,14 @@
 import S from "@sanity/desk-tool/structure-builder";
 import { Icon } from "../icon";
 import React from "react";
-import { BsToggles } from "react-icons/bs";
+import { BsToggles, BsCashCoin } from "react-icons/bs";
 import { GrFacebook } from "react-icons/gr";
 import { FaGlobeAfrica } from "react-icons/fa";
 import { MdAddBusiness } from "react-icons/md";
 import { GiDirectionSign } from "react-icons/gi";
+import { GoSettings } from "react-icons/go";
+import { BiFilterAlt } from "react-icons/bi";
+import { AiOutlineGoogle } from "react-icons/ai";
 
 // prettier-ignore
 export const settings = S.listItem()
@@ -15,6 +18,19 @@ export const settings = S.listItem()
     S.list()
       .title("Innstillinger")
       .items([
+        // Generelle innstillinger
+        S.listItem()
+          .title("Generelle innstillinger")
+          .icon(GoSettings)
+          .schemaType("settingsGeneral")
+          .child(
+            S.editor()
+              .schemaType("settingsGeneral")
+              .documentId("settingsGeneral")
+          ),
+        S.divider(),
+
+        // Info om selskapet
         S.listItem()
           .title("Info om selskapet")
           .icon(MdAddBusiness)
@@ -23,16 +39,45 @@ export const settings = S.listItem()
             S.editor().schemaType("companyInfo").documentId("companyInfo")
           ),
         S.divider(),
+
+        // Filter (user)
         S.listItem()
-          .title("Globale innstillinger")
-          .icon(FaGlobeAfrica)
-          .schemaType("settingsGeneral")
+          .title("Filter")
+          .icon(BiFilterAlt)
+          .schemaType("settingsFilter")
           .child(
             S.editor()
-              .schemaType("settingsGeneral")
-              .documentId("settingsGeneral")
+              .schemaType("settingsFilter")
+              .documentId("settingsFilter")
           ),
         S.divider(),
+
+        // Filter (admin)
+        S.listItem()
+          .title("Filter (admin)")
+          .icon(BiFilterAlt)
+          .schemaType("settingsFilterAdmin")
+          .child(
+            S.editor()
+              .schemaType("settingsFilterAdmin")
+              .documentId("settingsFilterAdmin")
+          ),
+        S.divider(),
+
+        // Søkemotoroptimalisering
+        S.listItem()
+          .title("Søkemotoroptimalisering")
+          .icon(AiOutlineGoogle)
+          .schemaType("settingsSEO")
+          .child(
+            S.editor()
+              .schemaType("settingsSEO")
+              .documentId("settingsSEO")
+          ),
+        S.divider(),
+
+
+        // Sociale media
         S.listItem()
           .title("Sosiale medier")
           .icon(GrFacebook)
@@ -44,6 +89,21 @@ export const settings = S.listItem()
               .documentId("socialMediaLinks")
           ),
         S.divider(),
+        
+        // Mersalg
+        S.listItem()
+          .title("Mersalg")
+          .icon(BsCashCoin)
+          .schemaType("settingsUpsell")
+          .child(
+            S.editor()
+              .title("Mersalg")
+              .schemaType("settingsUpsell")
+              .documentId("settingsUpsell")
+          ),
+        S.divider(),
+
+        // Omdirigeringer
         S.listItem()
           .title("Omdirigeringer")
           .icon(GiDirectionSign)
@@ -52,5 +112,6 @@ export const settings = S.listItem()
             S.documentTypeList('redirect')
           ),
         S.divider(),
+
       ])
   );

@@ -19,7 +19,7 @@ export default {
         {
           title: "Velg et produkt ved å søke eller ved å bruke nedtrekkslisten",
           type: "reference",
-          to: [{ type: "productVariant" }],
+          to: [{ type: "productVariant" }, { type: "product" }],
           options: {
             layout: "grid",
             disableNew: true,

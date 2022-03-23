@@ -1,6 +1,6 @@
 export default {
   title: "Generelle innstillinger",
-  name: "settingsGeneral",
+  name: "settingsSEO",
   type: "document",
   fields: [{ name: "metaInfo", type: "metaInfo" }],
 };

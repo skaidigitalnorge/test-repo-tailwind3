@@ -5,5 +5,5 @@ export default {
   name: "linkInternal",
   type: "reference",
   icon: () => <Icon name="linkInternal" />,
-  to: [{ type: "page" }],
+  to: [{ type: "page" }, { type: "collection" }],
 };

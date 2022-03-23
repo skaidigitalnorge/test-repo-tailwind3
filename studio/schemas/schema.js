@@ -14,17 +14,24 @@ import link from "./objects/linkExternal";
 import navbar from "./documents/navbar";
 import linkList from "./objects/linkList";
 import companyInfo from "./documents/companyInfo";
-import settingsGeneral from "./documents/settings-general";
 import footer from "./documents/footer";
 import productVariant from "./documents/product-variant";
 import redirect from "./documents/redirect";
 import linkInternal from "./objects/linkInternal";
-import collections from "./documents/collections";
 import upsellCollections from "./documents/upsellCollections";
 import infoBanner from "./documents/infoBanner";
 import socialMediaLinks from "./documents/socialMediaLinks";
 import simpleText from "./objects/simpleText";
 import linkExternal from "./objects/linkExternal";
+import settingsSEO from "./documents/settingsSEO";
+import settingsGeneral from "./documents/settingsGeneral";
+import settingsUpsell from "./documents/settingsUpsell";
+import settingsFilter from "./documents/settingsFilter";
+import settingsFilterAdmin from "./documents/settingsFilterAdmin";
+import socialMedia from "./objects/socialMedia";
+import collection from "./documents/collection";
+import navPage from "./objects/navPage";
+import navDropdown from "./objects/navDropdown";
 
 export default createSchema({
   name: "default",
@@ -37,6 +44,9 @@ export default createSchema({
     linkExternal,
     linkInternal,
     linkList,
+    socialMedia,
+    navPage,
+    navDropdown,
 
     // Modules
     faq,
@@ -49,12 +59,16 @@ export default createSchema({
     navbar,
     footer,
     redirect,
-    collections,
+    collection,
     upsellCollections,
     companyInfo,
-    settingsGeneral,
+    settingsSEO,
     infoBanner,
     socialMediaLinks,
+    settingsGeneral,
+    settingsUpsell,
+    settingsFilter,
+    settingsFilterAdmin,
 
     // Singletons
   ]),

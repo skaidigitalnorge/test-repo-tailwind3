@@ -6,8 +6,8 @@ import { CgToolbarTop, CgToolbarBottom } from "react-icons/cg";
 import { BiInfoSquare } from "react-icons/bi";
 
 // prettier-ignore
-export const modules = S.listItem()
-  .title('Moduler')
+export const globalElements = S.listItem()
+  .title('Globale elementer')
   .icon(RiPlayListAddFill)
   .child(
     S.list()

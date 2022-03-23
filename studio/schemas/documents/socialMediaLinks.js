@@ -4,10 +4,12 @@ export default {
   type: "document",
   fields: [
     {
-      title: "Facebook",
-      name: "urlFacebook",
-      type: "url",
-      description: "Hvis du har en Facebook, lim inn lenken her",
+      title: "Sosiale medier",
+      name: "socialMediaLinks",
+      type: "array",
+      description:
+        "Her kan du legge inn alle sosiale mediene hvor du har en bruker du ønsker å dele",
+      of: [{ type: "socialMedia" }],
     },
   ],
 };

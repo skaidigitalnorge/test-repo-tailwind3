@@ -4,23 +4,22 @@ export default {
   type: "document",
   groups: [
     { name: "content", title: "Innhold", default: true },
-    {
-      name: "upsells",
-      title: "Upsells",
-    },
     { name: "modules", title: "Moduler" },
     { name: "mersalg", title: "Mersalg" },
-    { name: "seo", title: "SEO" },
+    { name: "seo", title: "Søkemotoroptimalisering" },
   ],
   fieldsets: [
     {
-      title: "Shopify",
+      title: "Info fra Shopify",
       name: "shopify",
-      description: "Synced from Shopify",
+      description:
+        "Trykk på nedtrekksikonet for å se informasjon om produktet hentet fra Shopify.",
       options: { columns: 2, collapsible: true },
     },
   ],
   fields: [
+    // Shopify data
+    //
     {
       title: "Produktnavn",
       name: "productTitle",
@@ -30,14 +29,56 @@ export default {
       group: "content",
     },
     {
-      title: "Tilgjengelig?",
-      name: "productAvailability",
+      title: "Produkt-ID",
+      name: "productID",
       type: "string",
       readOnly: true,
       fieldset: "shopify",
       group: "content",
     },
+    {
+      title: "Pris",
+      name: "productPrice",
+      type: "number",
+      readOnly: true,
+      fieldset: "shopify",
+      group: "content",
+    },
+    {
+      title: "SKU",
+      name: "SKU",
+      type: "number",
+      readOnly: true,
+      fieldset: "shopify",
+      group: "content",
+    },
+    {
+      title: "På lager?",
+      name: "inStock",
+      type: "boolean",
+      readOnly: true,
+      fieldset: "shopify",
+      group: "content",
+    },
+    {
+      title: "Få på lager?",
+      name: "lowStock",
+      type: "boolean",
+      readOnly: true,
+      fieldset: "shopify",
+      group: "content",
+    },
+    {
+      title: "Nettstedsadresse",
+      name: "slug",
+      type: "slug",
+      readOnly: true,
+      fieldset: "shopify",
+      group: "content",
+    },
 
+    // Content
+    //
     {
       title: "Alternativ tittel",
       name: "replacementTitle",
@@ -59,35 +100,39 @@ export default {
       name: "imagesProduct",
       type: "array",
       description:
-        "Bilder du laster opp her, vil vises på alle variantene. Du kan overskride dem ved å legge til bilder under 'produktvarianter'",
+        "Bilder du laster opp her vil vises alle steder hvor dette produktet dukker opp. Du kan laste opp bilder til de ulike variantene også under 'Produktvarianter'",
       of: [{ type: "richImage" }],
       options: {
         layout: "grid",
       },
       group: "content",
     },
+
+    // Upsells
+    //
     {
       title: "Anbefalte produkter",
       name: "reccommendedProducts",
       type: "array",
       description:
-        "Her velger du hvilke produkter som blir vist under 'Anbefalte produkter'",
-      of: [{ type: "product" }],
+        "Her velger du hvilke produkter som blir vist under 'Anbefalte produkter'. Lar du den stå tom, så brukes produktene som er valgt under Innstillinger->Mersalg",
+      of: [
+        {
+          type: "reference",
+          to: [{ type: "product" }],
+          options: {
+            disableNew: true,
+          },
+        },
+      ],
       options: {
         layout: "grid",
       },
       group: "mersalg",
     },
-    {
-      title: "Mersalgkolleksjon",
-      name: "upsellCollection",
-      type: "reference",
-      description:
-        "Velg hvilken mersalgskolleksjon du ønsker å vise når du legger til dette produktet i handlekurven",
-      to: [{ type: "upsellCollection" }],
-      group: "mersalg",
-    },
 
+    // Modules
+    //
     {
       title: "Moduler",
       name: "modules",
@@ -98,10 +143,21 @@ export default {
       of: [{ type: "faq" }],
       group: "modules",
     },
+
+    // SEO
+    //
     {
-      title: "Søkemotoroptimalisering",
-      name: "seo",
-      type: "metaInfo",
+      title: "Sidetittel",
+      name: "metaTitle",
+      type: "string",
+      description: "",
+      group: "seo",
+    },
+    {
+      title: "Sidebeskrivelse",
+      name: "metaDescription",
+      type: "string",
+      description: "",
       group: "seo",
     },
   ],

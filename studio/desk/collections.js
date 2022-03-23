@@ -6,6 +6,6 @@ export const collections = S.listItem()
   .title('Kolleksjoner')
   .icon(BsCollectionFill)
   .child(
-    S.documentTypeList('collections')
+    S.documentTypeList('collection')
       .title("Kolleksjoner")
   )

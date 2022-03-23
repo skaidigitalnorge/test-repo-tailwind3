@@ -1,6 +1,6 @@
 export default {
   title: "Kolleksjoner",
-  name: "collections",
+  name: "collection",
   type: "document",
   fields: [
     {

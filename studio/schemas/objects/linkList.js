@@ -1,6 +1,6 @@
 export default {
   title: "Lenke",
-  name: "linkList",
+  name: "linkInternalList",
   type: "object",
   fields: [
     {
@@ -13,7 +13,7 @@ export default {
       title: "Nedtrekksgjenstander",
       name: "dropdownItems",
       type: "array",
-      of: [{ type: "linkExternal" }],
+      of: [{ type: "linkInternal" }],
       description: "Description",
     },
   ],
