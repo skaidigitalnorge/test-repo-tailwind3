@@ -1,8 +1,6 @@
-import React from "react";
+import { centsToPrice } from "../../lib/helpers";
 
-import { centsToPrice } from "@lib/helpers";
-
-const ProductPrice = ({ price, comparePrice }) => {
+export const ProductPrice = ({ price, comparePrice }) => {
   return (
     <div className="price">
       <span className="price--current">${centsToPrice(price)}</span>
@@ -15,5 +13,3 @@ const ProductPrice = ({ price, comparePrice }) => {
     </div>
   );
 };
-
-export default ProductPrice;
