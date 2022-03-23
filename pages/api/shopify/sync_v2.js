@@ -40,6 +40,7 @@ export default async function handler(req, res) {
 
   // Destructrer nødvendige komponenter
   const { method, headers, body } = req;
+  console.log("Body:");
   console.log(body);
 
   // Method skal være POST, avbryt hvis ikke
