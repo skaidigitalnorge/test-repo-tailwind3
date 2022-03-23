@@ -1,6 +1,6 @@
-import { Layout } from "../components/layout";
-import { Module } from "../components/modules";
-import { useState, useEffect } from "react";
+// import { Layout } from "../components/layout";
+// import { Module } from "../components/modules";
+// import { useState, useEffect } from "react";
 
 function Page({ data }) {
   // // set our Product state
