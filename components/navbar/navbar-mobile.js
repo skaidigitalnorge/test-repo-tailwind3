@@ -12,7 +12,7 @@ export const NavbarMobile = () => {
 
   return (
     <>
-      {showMobilenav ? (
+      {/* {showMobilenav ? (
         <>
           <Layout>
             <div className="py-24 bg-light pb-56 ">
@@ -92,7 +92,7 @@ export const NavbarMobile = () => {
             </div>
           </div>
         </Layout>
-      )}
+      )} */}
     </>
   );
 };
