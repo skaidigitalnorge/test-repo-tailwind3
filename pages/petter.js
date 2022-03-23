@@ -29,33 +29,65 @@ function petter() {
   return (
     <div className="m-40">
       <div>
-        <button onClick={() => getProducts()}>Print all products</button>
+        <button onClick={() => getProducts()}>
+          Print all products from Shopify
+        </button>
       </div>
       <div>
         <button onClick={() => getProduct("enda-finere-blomster")}>
           Print a product by handle
         </button>
       </div>
-      <div>
+      {/* <div>
         <button onClick={() => getProductsCollection("luer", 5)}>
           Print a collection by handle
         </button>
-      </div>
-      <div>
+      </div> */}
+      {/* <div>
         <button onClick={() => updateSanityStudio()}>
           Update sanity studio
         </button>
-      </div>
+      </div> */}
       <div>
         <button onClick={() => getSanityDokuments()}>
-          print all sanity documents
+          Print all sanity documents
         </button>
+      </div>
+      <div>
+        <button onClick={() => testManuelSyncCal()}>
+          Test av manuel sync cal
+        </button>
+      </div>
+      <div>
+        <button onClick={() => testCreate()}>Test av Create response</button>
       </div>
     </div>
   );
 }
 
 export default petter;
+
+const testCreate = async (req, res) => {
+  const input = {
+    id: "7880387967896789322900",
+    title: "Test av ny Create",
+  };
+  const result = await sanityClient.createOrReplace(transform(input));
+  console.log(result);
+
+  return result;
+};
+
+function transform(product) {
+  const singleProduct = {
+    _id: product.id,
+    _type: "product",
+    productTitle: product.title,
+    productId: product.id,
+  };
+
+  return singleProduct;
+}
 
 // Dette er Storefront API calls. Under kommer alle som er lagt til.
 // Om du mangler noen fields, gi meg beskjed så legger jeg til.
@@ -93,6 +125,118 @@ const getProductsCollection = async (collection, number) => {
 const updateSanityStudio = async () => {
   const data = await fetch("http://localhost:3000/api/shopify/updateSanity");
   // await updateSanity();
+};
+
+const testManuelSyncCal = () => {
+  fetch("http://localhost:3000/api/shopify/product-update", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "x-shopify-hmac-sha256": "vvf7YkcumnhrGp28a59ndQNeADQnu3cVEkmdJ4RXNbg=",
+      "x-shopify-topic": "product/create",
+    },
+    body: JSON.stringify(bodyJson),
+  });
+  // await updateSanity();
+};
+const bodyJson = {
+  id: "788032119674292900",
+  title: "Example T-Shirt",
+  body_html: null,
+  vendor: "Acme",
+  product_type: "Shirts",
+  created_at: null,
+  handle: "example-t-shirt",
+  updated_at: "2022-03-18T11:00:06+01:00",
+  published_at: "2022-03-18T11:00:06+01:00",
+  template_suffix: null,
+  status: "active",
+  published_scope: "web",
+  tags: "example, mens, t-shirt",
+  admin_graphql_api_id: "gid://shopify/Product/788032119674292922",
+  variants: [
+    {
+      id: 642667041472714000,
+      product_id: 788032119674292900,
+      title: "",
+      price: "19.99",
+      sku: "example-shirt-s",
+      position: 0,
+      inventory_policy: "deny",
+      compare_at_price: "24.99",
+      fulfillment_service: "manual",
+      inventory_management: "shopify",
+      option1: "Small",
+      option2: null,
+      option3: null,
+      created_at: null,
+      updated_at: null,
+      taxable: true,
+      barcode: null,
+      grams: 200,
+      image_id: null,
+      weight: 200,
+      weight_unit: "g",
+      inventory_item_id: null,
+      inventory_quantity: 75,
+      old_inventory_quantity: 75,
+      requires_shipping: true,
+      admin_graphql_api_id: "gid://shopify/ProductVariant/642667041472713922",
+    },
+    {
+      id: 757650484644203900,
+      product_id: 788032119674292900,
+      title: "",
+      price: "19.99",
+      sku: "example-shirt-m",
+      position: 0,
+      inventory_policy: "deny",
+      compare_at_price: "24.99",
+      fulfillment_service: "manual",
+      inventory_management: "shopify",
+      option1: "Medium",
+      option2: null,
+      option3: null,
+      created_at: null,
+      updated_at: null,
+      taxable: true,
+      barcode: null,
+      grams: 200,
+      image_id: null,
+      weight: 200,
+      weight_unit: "g",
+      inventory_item_id: null,
+      inventory_quantity: 50,
+      old_inventory_quantity: 50,
+      requires_shipping: true,
+      admin_graphql_api_id: "gid://shopify/ProductVariant/757650484644203962",
+    },
+  ],
+  options: [
+    {
+      id: 527050010214937800,
+      product_id: 788032119674292900,
+      name: "Title",
+      position: 1,
+      values: ["Small", "Medium"],
+    },
+  ],
+  images: [
+    {
+      id: 539438707724640960,
+      product_id: 788032119674292900,
+      position: 0,
+      created_at: null,
+      updated_at: null,
+      alt: null,
+      width: 323,
+      height: 434,
+      src: "//cdn.shopify.com/shopifycloud/shopify/assets/shopify_shirt-39bb555874ecaeed0a1170417d58bbcf792f7ceb56acfe758384f788710ba635.png",
+      variant_ids: [],
+      admin_graphql_api_id: "gid://shopify/ProductImage/539438707724640965",
+    },
+  ],
+  image: null,
 };
 
 const getSanityDokuments = async () => {
