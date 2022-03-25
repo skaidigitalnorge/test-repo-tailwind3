@@ -13,6 +13,7 @@ export const NavbarMobile = ({ data }) => {
     setShowMobilenav((prev) => !prev);
   };
 
+<<<<<<< HEAD
   console.log("data i mobilenav");
   console.log(data);
 
@@ -47,6 +48,73 @@ export const NavbarMobile = ({ data }) => {
           <a>
             <p className="text-h3 mb-0 flex self-center font-semibold">
               Bliss Flowerbox
+=======
+  return (
+    <>
+      {/* {showMobilenav ? (
+        <>
+          <Layout>
+            <div className="py-24 bg-light pb-56 ">
+              <header className="flex justify-between text-lys  ">
+                <div>
+                  <Link href="/">
+                    <a>
+                      <p className="text-h3 font-semibold flex mb-0 self-center">
+                        {storeNameOrLogo}
+                      </p>
+                    </a>
+                  </Link>
+                </div>
+                <div
+                  className="strek"
+                  onClick={() => setShowMobilenav(!showMobilenav)}
+                >
+                  <Hamburger
+                    toggled={showMobilenav}
+                    toggle={setShowMobilenav}
+                    easing="ease-in"
+                    rounded
+                    label="Vis meny"
+                    hideOutline={false}
+                  />
+                </div>
+              </header>
+              <ul className="mt-56">
+                <Link href="/">
+                  <li className="text-h1 font-semibold text-dark mt-16">
+                    Hjem
+                  </li>
+                </Link>
+                <Link href="/meny">
+                  <li className="text-h1 font-semibold text-dark mt-16">
+                    Menyen
+                  </li>
+                </Link>
+                <Link href="/om-oss">
+                  <li className="text-h1 font-semibold text-dark mt-16">
+                    Om oss
+                  </li>
+                </Link>
+                <Link href="/Kontakt">
+                  <li className="text-h1 font-semibold text-dark mt-16">
+                    Kontakt
+                  </li>
+                </Link>
+                <Link href="#bookBord">
+                  <li className="text-h1 font-semibold text-dark mt-16">
+                    Book et bord
+                  </li>
+                </Link>
+              </ul>
+            </div>
+          </Layout>
+        </>
+      ) : (
+        <Layout>
+          <div className="bg-white flex justify-between py-24">
+            <p className="text-h3 font-semibold flex mb-0 self-center">
+              {storeNameOrLogo}
+>>>>>>> 6d382642d9019e73f0a6e62530904e92e20f24a4
             </p>
           </a>
         </Link>
@@ -97,6 +165,7 @@ export const NavbarMobile = ({ data }) => {
               />
             </div>
           </div>
+<<<<<<< HEAD
           <ul className="mt-56 bg-neutral-100">
             <MapNavItems />
           </ul>
@@ -106,4 +175,10 @@ export const NavbarMobile = ({ data }) => {
   };
 
   return showMobilenav ? <OpenNav /> : <ClosedNav />;
+=======
+        </Layout>
+      )} */}
+    </>
+  );
+>>>>>>> 6d382642d9019e73f0a6e62530904e92e20f24a4
 };
