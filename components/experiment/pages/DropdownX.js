@@ -4,7 +4,7 @@ import Link from "next/link";
 const NavSubLink = ({ href, children, iconLeft }) => {
   return (
     <Link href={href}>
-      <a className="text-body_medium font-medium text-neutral_700 flex animateSmooth">
+      <a className="text-body_medium font-medium text-neutral-700 flex animateSmooth">
         <span className="animateUnderline">
           {iconLeft != null ? <span className="mr-8">{iconLeft}</span> : null}{" "}
           {children}
@@ -17,7 +17,7 @@ const NavSubLink = ({ href, children, iconLeft }) => {
 const NavHeaderLink = ({ href, children }) => {
   return (
     <Link href={href}>
-      <a className="text-neutral_700 font-medium text-body_regular mb-8">
+      <a className="text-neutral-700 font-medium text-body_regular mb-8">
         {children}
       </a>
     </Link>

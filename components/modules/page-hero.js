@@ -1,3 +1,3 @@
-export const PageHero = ({ data = {} }) => {
+export const PageHero = ({ data }) => {
   return <></>;
 };

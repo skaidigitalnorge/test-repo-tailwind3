@@ -1,12 +1,19 @@
+import { BsCashCoin, BsGrid1X2 } from "react-icons/bs";
+import { AiOutlineFileText } from "react-icons/ai";
+
 export default {
   title: "Produkt",
   name: "product",
   type: "document",
   groups: [
-    { name: "content", title: "Innhold", default: true },
-    { name: "modules", title: "Moduler" },
-    { name: "mersalg", title: "Mersalg" },
-    { name: "seo", title: "Søkemotoroptimalisering" },
+    {
+      name: "content",
+      title: "Innhold",
+      default: true,
+      icon: AiOutlineFileText,
+    },
+    { name: "modules", title: "Moduler", icon: BsGrid1X2 },
+    { name: "mersalg", title: "Mersalg", icon: BsCashCoin },
   ],
   fieldsets: [
     {
@@ -72,7 +79,7 @@ export default {
       title: "Nettstedsadresse",
       name: "slug",
       type: "slug",
-      readOnly: true,
+      // readOnly: true,
       fieldset: "shopify",
       group: "content",
     },
@@ -95,6 +102,7 @@ export default {
         "Gi en god beskrivelse av fordelene og egenskapene med produktet her",
       group: "content",
     },
+
     {
       title: "Produktbilder",
       name: "imagesProduct",
@@ -140,25 +148,12 @@ export default {
       group: "modules",
       description:
         "Her kan du legge til ekstra innhold til produktet. Det kan være ofte stilte spørsmål, osv.",
-      of: [{ type: "faq" }],
+      of: [{ type: "faq" }, { type: "productHero" }],
+      initialValue: [{ _type: "productHero" }],
       group: "modules",
-    },
-
-    // SEO
-    //
-    {
-      title: "Sidetittel",
-      name: "metaTitle",
-      type: "string",
-      description: "",
-      group: "seo",
-    },
-    {
-      title: "Sidebeskrivelse",
-      name: "metaDescription",
-      type: "string",
-      description: "",
-      group: "seo",
+      options: {
+        editModal: "popover",
+      },
     },
   ],
   preview: {
@@ -166,6 +161,14 @@ export default {
       title: "productTitle",
       subtitle: "parentProduct.productTitle",
       media: "imagesProduct.0.image",
+      replacementTitle: "replacementTitle",
+    },
+    prepare({ title, subtitle, media, replacementTitle }) {
+      return {
+        title: title ? title : replacementTitle,
+        subtitle,
+        media,
+      };
     },
   },
 };

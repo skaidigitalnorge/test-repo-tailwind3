@@ -1,4 +1,7 @@
 import { MdWeb } from "react-icons/md";
+import { BsGrid1X2 } from "react-icons/bs";
+import { AiOutlineFileText } from "react-icons/ai";
+import { BsFillFileTextFill } from "react-icons/bs";
 
 export default {
   title: "Page",
@@ -6,14 +9,50 @@ export default {
   type: "document",
   icon: MdWeb,
   groups: [
-    { name: "base", title: "Info", default: true },
-    { name: "modules", title: "Moduler" },
+    { name: "base", title: "Info", default: true, icon: AiOutlineFileText },
+    { name: "modules", title: "Moduler", icon: BsGrid1X2 },
     {
       name: "seo",
       title: "SEO",
     },
   ],
   fields: [
+    // {
+    //   name: "blockLayout",
+    //   title: "Block Layout",
+    //   type: "visualOptions",
+    //   options: {
+    //     showTooltip: true,
+    //     optionSize: "small",
+    //     list: {
+    //       left: {
+    //         name: "Text Left / Image Right",
+    //         icon: BsFillFileTextFill,
+    //         default: true,
+    //       },
+    //       right: {
+    //         name: "Text Right / Image Left",
+    //         icon: BsFillFileTextFill,
+    //       },
+    //       top: {
+    //         name: "Text Top / Image Bottom",
+    //         icon: BsFillFileTextFill,
+    //       },
+    //       bottom: {
+    //         name: "Text Botom / Image Top",
+    //         icon: BsFillFileTextFill,
+    //       },
+    //       notext: {
+    //         name: "Image, No Text",
+    //         icon: BsFillFileTextFill,
+    //       },
+    //       noimage: {
+    //         name: "Text, No Image",
+    //         icon: BsFillFileTextFill,
+    //       },
+    //     },
+    //   },
+    // },
     {
       title: "Sidetittel",
       name: "title",
@@ -29,6 +68,7 @@ export default {
       description:
         "Skriv en kort beskrivelse av hva siden handler om. Denne teksten blir blant annet vist hvis denne siden dukker opp i et Google-søk",
       group: "base",
+      validation: (Rule) => Rule.required(""),
     },
     {
       title: "Nettstedsadresse",
@@ -36,8 +76,16 @@ export default {
       type: "slug",
       description: "Vises typisk i Google-søk og øverst i nettleservinduet",
       options: {
+        //Change to schema title to automatically populate
         source: "title",
-        maxLength: 96,
+        slugify: (input) =>
+          input
+            .toLowerCase()
+            //Remove spaces
+            .replace(/\s+/g, "-")
+            //Remove special characters
+            .replace(/[&\/\\#,+()$~%.'":*?<>{}]/g, ""),
+        validation: (Rule) => Rule.required(),
       },
       group: "base",
     },
@@ -61,12 +109,19 @@ export default {
 
     {
       title: "Moduler",
-      name: "faq",
+      name: "modules",
       type: "array",
       description:
         "Her legger du inn innholdet til siden ved å legge til moduler. Trykk '+ Add item…' for å se hva du kan legge til",
-      of: [{ type: "faq" }, { type: "sectionTitle" }],
+      of: [
+        { type: "pageHero", title: "Hero" },
+        { type: "faq", title: "Ofte stilte spørsmål" },
+        { type: "sectionTitle", title: "Overskrift" },
+      ],
       group: "modules",
+      options: {
+        editModal: "popover",
+      },
     },
   ],
   preview: {

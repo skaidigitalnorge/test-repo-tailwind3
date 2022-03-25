@@ -1,10 +1,11 @@
-import { getSanityClient } from "/lib/sanity";
+import { getSanityClient } from "../lib/sanity";
 import * as queries from "./queries";
 
 // Fetch all dynamic docs
 export async function getAllDocSlugs(doc) {
+  // `*[_type == "${doc}" && !(_id in [${queries.homeID}, ${queries.shopID}, ${queries.errorID}]) && wasDeleted != true && isDraft != true]{ "slug": slug.current }`
   const data = await getSanityClient().fetch(
-    `*[_type == "${doc}" && !(_id in [${queries.homeID}, ${queries.shopID}, ${queries.errorID}]) && wasDeleted != true && isDraft != true]{ "slug": slug.current }`
+    `*[_type == "${doc}" && wasDeleted != true && isDraft != true]{ "slug": slug.current }`
   );
   return data;
 }
@@ -60,18 +61,21 @@ export async function getPage(slug, preview) {
 export async function getProduct(slug, preview) {
   const query = `
     {
-      "page": *[_type == "product" && slug.current == "${slug}" && wasDeleted != true && isDraft != true] | order(_updatedAt desc)[0]{
-        hasTransparentHeader,
-        modules[]{
-          ${queries.modules}
+      "page": *[_type == "product" && slug.current == "${slug}" && wasDeleted != true && isDraft != true] | order(_updatedAt desc)[0]
+      {
+        "product": {
+          "slug": store.slug.current,
+          "originalTitle": store.title,
+          replacementTitle,
         },
-        "product": ${queries.product},
-        title,
-        seo
+        ...,
+        modules[]{
+          ...,
+        },
       },
       ${queries.site}
     }
-  `;
+    `;
 
   const data = await getSanityClient(preview).fetch(query);
 

@@ -3,10 +3,11 @@ import { Icon } from "../icon";
 import React from "react";
 import { CgTemplate } from "react-icons/cg";
 import { ImHome } from "react-icons/im";
-import { BsPersonSquare } from "react-icons/bs";
+import { BsFillPersonLinesFill } from "react-icons/bs";
 import { MdWeb } from "react-icons/md";
 import { BiError, BiShoppingBag } from "react-icons/bi";
 import { MdOutlineMessage } from "react-icons/md";
+import { GiStopSign } from "react-icons/gi";
 
 // prettier-ignore
 export const page = S.listItem()
@@ -33,7 +34,7 @@ export const page = S.listItem()
         // 
         S.listItem()
         .title('Om-siden')
-        .icon(BsPersonSquare)
+        .icon(BsFillPersonLinesFill)
       .child(
         S.editor()
         .title('Om-siden')
@@ -44,8 +45,8 @@ export const page = S.listItem()
       // Error page
       // 
         S.listItem()
-        .title('Error')
-        .icon(BiError)
+        .title('Error (admin)')
+        .icon(GiStopSign)
       .child(
         S.editor()
         .title('Error')

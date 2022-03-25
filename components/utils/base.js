@@ -1,6 +1,4 @@
 import Image from "next/image";
-import { motion } from "framer-motion";
-import { NextSeo } from "next-seo";
 
 // TODO: Add the path for the cloudinary account for this project
 const myLoader = ({ src, width, quality }) => {
@@ -38,7 +36,7 @@ export const SectionNav = ({ children, id, c }) => {
   return (
     <section
       id={id}
-      className={`${c} mx-auto align-center py-32 md:py-56 lg:py-96`}
+      className={`${c} align-center mx-auto py-32 md:py-56 lg:py-96`}
     >
       {children}
     </section>
@@ -106,33 +104,13 @@ export const HeroContainerUtenPadding = ({ children, id, farge, pt }) => {
   );
 };
 
-export const Layout = ({ children, c, title, description }) => {
-  const variants = {
-    initial: { opacity: 0, transition: { duration: 2 } },
-    animate: {
-      opacity: 1,
-      transition: { duration: 1.5, ease: [0.87, 0.5, 0, 0.13] },
-    },
-    exit: { opacity: 0, transition: { duration: 3 } },
-  };
-
+export const Container = ({ children, c }) => {
   return (
-    <>
-      <NextSeo
-        title={title}
-        description={description}
-        openGraph={(title, description)}
-      />
-      <motion.main
-        initial="initial"
-        animate="animate"
-        exit="exit"
-        variants={variants}
-        className={`container mx-auto w-screen md:max-w lg:max-w xl:max-w ${c}`}
-      >
-        <div className="max-w-95 mx-auto align-center">{children}</div>
-      </motion.main>
-    </>
+    <div
+      className={`max-w md:max-w lg:max-w xl:max-w container mx-auto w-screen ${c}`}
+    >
+      <div className="align-center mx-auto max-w-[95vw]">{children}</div>
+    </div>
   );
 };
 //

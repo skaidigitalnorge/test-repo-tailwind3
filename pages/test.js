@@ -2,8 +2,8 @@ import { EmblaCarousel } from "../components/embla-carousel";
 import {
   FourEightEight,
   Grid,
-  Layout,
   FourEightTwelve,
+  Container,
 } from "../components/utils/base";
 import Link from "next/link";
 
@@ -36,7 +36,7 @@ function Test() {
 
   return (
     <>
-      <Layout>
+      <Container>
         <Grid>
           <FourEightEight>
             <EmblaCarousel slides={slides} />
@@ -49,7 +49,7 @@ function Test() {
             </Link>
           </FourEightTwelve>
         </Grid>
-      </Layout>
+      </Container>
     </>
   );
 }

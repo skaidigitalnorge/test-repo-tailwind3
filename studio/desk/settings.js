@@ -7,8 +7,9 @@ import { FaGlobeAfrica } from "react-icons/fa";
 import { MdAddBusiness } from "react-icons/md";
 import { GiDirectionSign } from "react-icons/gi";
 import { GoSettings } from "react-icons/go";
-import { BiFilterAlt } from "react-icons/bi";
-import { AiOutlineGoogle } from "react-icons/ai";
+import { BiFilterAlt, BiCookie } from "react-icons/bi";
+import { AiOutlineBgColors } from "react-icons/ai";
+import { RiArrowLeftRightLine } from "react-icons/ri";
 
 // prettier-ignore
 export const settings = S.listItem()
@@ -44,11 +45,9 @@ export const settings = S.listItem()
         S.listItem()
           .title("Filter")
           .icon(BiFilterAlt)
-          .schemaType("settingsFilter")
           .child(
-            S.editor()
-              .schemaType("settingsFilter")
-              .documentId("settingsFilter")
+            S.documentTypeList('filter')
+            .title("Filter")
           ),
         S.divider(),
 
@@ -59,22 +58,36 @@ export const settings = S.listItem()
           .schemaType("settingsFilterAdmin")
           .child(
             S.editor()
+              .title("Filter (Admin)")
               .schemaType("settingsFilterAdmin")
               .documentId("settingsFilterAdmin")
           ),
         S.divider(),
-
-        // Søkemotoroptimalisering
+     
+        // Cookie settings
         S.listItem()
-          .title("Søkemotoroptimalisering")
-          .icon(AiOutlineGoogle)
-          .schemaType("settingsSEO")
+          .title("Cookie-innstillinger")
+          .icon(BiCookie)
+          .schemaType("settingsCookies")
           .child(
             S.editor()
-              .schemaType("settingsSEO")
-              .documentId("settingsSEO")
+              .title("Cookie-innstillinger")
+              .schemaType("settingsCookies")
+              .documentId("settingsCookies")
           ),
         S.divider(),
+
+        // ! Søkemotoroptimalisering. Har lagt inn meta description i generelle innstillinger og bilde er lastet opp under info om selskapet. Får se om denne blir nødvendig i det hele tatt.
+        // S.listItem()
+        //   .title("Søkemotoroptimalisering")
+        //   .icon(AiOutlineGoogle)
+        //   .schemaType("settingsSEO")
+        //   .child(
+        //     S.editor()
+        //       .schemaType("settingsSEO")
+        //       .documentId("settingsSEO")
+        //   ),
+        // S.divider(),
 
 
         // Sociale media
@@ -94,6 +107,7 @@ export const settings = S.listItem()
         S.listItem()
           .title("Mersalg")
           .icon(BsCashCoin)
+          
           .schemaType("settingsUpsell")
           .child(
             S.editor()
@@ -102,11 +116,21 @@ export const settings = S.listItem()
               .documentId("settingsUpsell")
           ),
         S.divider(),
+        
+        // Farger
+        S.listItem()
+          .title("Farger")
+          .icon(AiOutlineBgColors)
+          .child(
+            S.documentTypeList('solidColor')
+             .title("Farger")
+          ),
+        S.divider(),
 
         // Omdirigeringer
         S.listItem()
           .title("Omdirigeringer")
-          .icon(GiDirectionSign)
+          .icon(RiArrowLeftRightLine)
           .schemaType("redirect")
           .child(
             S.documentTypeList('redirect')

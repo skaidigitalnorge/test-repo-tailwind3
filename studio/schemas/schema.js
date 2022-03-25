@@ -32,6 +32,15 @@ import socialMedia from "./objects/socialMedia";
 import collection from "./documents/collection";
 import navPage from "./objects/navPage";
 import navDropdown from "./objects/navDropdown";
+import collectionGrid from "./modules/collectionGrid";
+import pageHero from "./modules/pageHero";
+import solidColor from "./documents/color";
+import filter from "./documents/filter";
+import filterSettings from "./objects/filterSettings";
+import sortSettings from "./objects/sortSettings";
+import questionAndAnswer from "./objects/questionAndAnswer";
+import productHero from "./objects/product-hero";
+import settingsCookies from "./documents/settingsCookies";
 
 export default createSchema({
   name: "default",
@@ -47,10 +56,16 @@ export default createSchema({
     socialMedia,
     navPage,
     navDropdown,
+    filterSettings,
+    sortSettings,
+    questionAndAnswer,
+    productHero,
 
     // Modules
     faq,
     sectionTitle,
+    collectionGrid,
+    pageHero,
 
     // Documents
     page,
@@ -68,7 +83,10 @@ export default createSchema({
     settingsGeneral,
     settingsUpsell,
     settingsFilter,
+    settingsCookies,
     settingsFilterAdmin,
+    solidColor,
+    filter,
 
     // Singletons
   ]),

@@ -1,12 +1,18 @@
+import { BsCashCoin, BsGrid1X2 } from "react-icons/bs";
+import { AiOutlineFileText } from "react-icons/ai";
 export default {
   title: "Produktvariant",
   name: "productVariant",
   type: "document",
   groups: [
-    { name: "content", title: "Innhold", default: true },
-    { name: "modules", title: "Moduler" },
-    { name: "mersalg", title: "Mersalg" },
-    { name: "seo", title: "Søkemotoroptimalisering" },
+    {
+      name: "content",
+      title: "Innhold",
+      default: true,
+      icon: AiOutlineFileText,
+    },
+    { name: "modules", title: "Moduler", icon: BsGrid1X2 },
+    { name: "mersalg", title: "Mersalg", icon: BsCashCoin },
   ],
   fieldsets: [
     {
@@ -18,6 +24,19 @@ export default {
     },
   ],
   fields: [
+    // Note
+    {
+      name: "note",
+      type: "note",
+      options: {
+        headline: "Hva er dette?",
+        message:
+          "Alle produkter som har varianter som farge, størrelse, osv., blir også vist her. Her kan du overstyre informasjonen som ble satt for produktet under 'Produkt' for en gitt variant. Er du fornøyd med det som vises i 'foreldreproduktet', så lar du bare ting så tomt. Du kan fylle inn noen felt, du må ikke fylle ut alle feltene.",
+        tone: "brand",
+      },
+      group: "content",
+    },
+
     // Shopify data
     {
       title: "Produktnavn",
@@ -144,6 +163,17 @@ export default {
     // Modules
     //
     {
+      name: "noteModules",
+      type: "note",
+      options: {
+        headline: "Hva er dette?",
+        message:
+          "Her kan legge til innholdsmoduler til denne varianten. Legger du til noe her, så erstater det alle modulene som ble satt i foreldreproduktet (for denne varianten).",
+        tone: "brand",
+      },
+      group: "modules",
+    },
+    {
       title: "Moduler",
       name: "modules",
       type: "array",
@@ -152,23 +182,9 @@ export default {
         "Her kan du legge til ekstra innhold til produktet. Det kan være ofte stilte spørsmål, osv.",
       of: [{ type: "faq" }],
       group: "modules",
-    },
-
-    // SEO
-    //
-    {
-      title: "Sidetittel",
-      name: "metaTitle",
-      type: "string",
-      description: "",
-      group: "seo",
-    },
-    {
-      title: "Sidebeskrivelse",
-      name: "metaDescription",
-      type: "string",
-      description: "",
-      group: "seo",
+      options: {
+        editModal: "popover",
+      },
     },
   ],
   preview: {

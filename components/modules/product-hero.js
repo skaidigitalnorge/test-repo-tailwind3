@@ -1,10 +1,14 @@
 import { ContentRenderer } from "../content-renderer";
 import { ProductPrice } from "../product-data/product-price";
+import { Container } from "../utils/base";
 
-export const ProductHero = ({ product, activeVariant, onVariantChange }) => {
+const ProductHero = ({ index, product, activeVariant, onVariantChange }) => {
+  const { originalTitle, replacementTitle, slug } = product;
+
   return (
-    <section id="product">
-      {activeVariant && (
+    <Container>
+      <section id="product" className="my-80">
+        {/* {activeVariant && (
         <div className="">
           {activeVariant.title}
 
@@ -15,9 +19,12 @@ export const ProductHero = ({ product, activeVariant, onVariantChange }) => {
           {!activeVariant.inStock && <span className="">Out of Stock</span>}
         </div>
       )}
-      <h1 className="">{product.title}</h1>
+      <h1 className="">{product.title}</h1> */}
 
-      <ProductPrice
+        <div>Her er orig title: {originalTitle}</div>
+        <div>Her er replacement title: {replacementTitle}</div>
+
+        {/* <ProductPrice
         price={activeVariant?.price || product.price}
         comparePrice={activeVariant?.comparePrice || product.comparePrice}
       />
@@ -26,7 +33,10 @@ export const ProductHero = ({ product, activeVariant, onVariantChange }) => {
         <div>
           <ContentRenderer blocks={product.description} />
         </div>
-      )}
-    </section>
+      )} */}
+      </section>
+    </Container>
   );
 };
+
+export default ProductHero;

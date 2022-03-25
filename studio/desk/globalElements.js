@@ -1,14 +1,12 @@
 import S from "@sanity/desk-tool/structure-builder";
-import { Icon } from "../icon";
-import React from "react";
-import { RiPlayListAddFill } from "react-icons/ri";
 import { CgToolbarTop, CgToolbarBottom } from "react-icons/cg";
 import { BiInfoSquare } from "react-icons/bi";
+import { FaGlobeAmericas } from "react-icons/fa";
 
 // prettier-ignore
 export const globalElements = S.listItem()
   .title('Globale elementer')
-  .icon(RiPlayListAddFill)
+  .icon(FaGlobeAmericas)
   .child(
     S.list()
       .title('Moduler')

@@ -9,9 +9,6 @@ export default {
       type: "array",
       description:
         "Her velger du hvilke produkter du ønsker å vise under produktene på produktsiden. Du kan overskride hva du setter her inne på enkeltprodukter",
-      options: {
-        layout: "grid",
-      },
       of: [
         {
           type: "reference",
@@ -21,6 +18,8 @@ export default {
           to: [{ type: "product" }, { type: "productVariant" }],
         },
       ],
+      validation: (Rule) =>
+        Rule.required().error("Du må velge noen produkter å ha her"),
     },
 
     {
@@ -29,9 +28,6 @@ export default {
       type: "array",
       description:
         "Her velger du hvilke produkter som kunden blir tilbudt når handlekurven vises etter at de legger til noe i handlekurven. Velg opptil 4 produkter.",
-      options: {
-        layout: "grid",
-      },
       of: [
         {
           type: "reference",
@@ -41,6 +37,8 @@ export default {
           to: [{ type: "product" }, { type: "productVariant" }],
         },
       ],
+      validation: (Rule) =>
+        Rule.required().error("Du må velge noen produkter å ha her"),
     },
 
     {
@@ -53,6 +51,8 @@ export default {
         disableNew: true,
       },
       to: [{ type: "product" }, { type: "productVariant" }],
+      validation: (Rule) =>
+        Rule.required().error("Du må velge noen produkter å ha her"),
     },
   ],
 };

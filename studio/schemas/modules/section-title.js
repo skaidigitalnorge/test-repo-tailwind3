@@ -1,4 +1,4 @@
-import { MdOutlineTitle } from "react-icons/md";
+import { BsCardHeading } from "react-icons/bs";
 
 const categoryName = "Seksjonstittel";
 
@@ -6,7 +6,7 @@ export default {
   title: "Seksjonstittel",
   name: "sectionTitle",
   type: "object",
-  icon: MdOutlineTitle,
+  icon: BsCardHeading,
   fields: [
     {
       title: "Tittel",

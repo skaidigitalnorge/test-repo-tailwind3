@@ -14,6 +14,8 @@ export default {
       type: "string",
       description:
         "Dette er tekst som vises til bruker som er blinde og bruker skjermlesere for å være på nett. Skriv en kort beskrivelse av hva du ser på bildet",
+      validation: (Rule) =>
+        Rule.required().error("Du må huske å fylle inn alternativteksten"),
     },
   ],
 };

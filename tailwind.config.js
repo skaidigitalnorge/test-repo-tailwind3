@@ -1,8 +1,11 @@
 // ! Only edit where there is blue text.
 module.exports = {
+  content: [
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
+  ],
   theme: {
     fontSize: {
-      // TODO Set the font families according to the design spec. For example:
       fontFamily: {
         sans: [""],
         serif: [""],
@@ -18,41 +21,57 @@ module.exports = {
         72: "72px",
         80: "80px",
       },
-      //
-      // TODO Configure the colors that do not have a hexcode already. Add all colors from the "color palette" section in the design
       colors: {
-        // ? Primary
-        primary_50: "#F8FAFC",
-        primary_300: "#F1F5F9",
-        primary_500: "#E2E8F0",
-        primary_700: "#008396",
-        primary_900: "#006E7E",
-        // ? Secondary
-        secondary_50: "#",
-        secondary_300: "#",
-        secondary_500: "#",
-        secondary_700: "#",
-        secondary_900: "#",
-        // ? Neutral
-        neutral_50: "#F8FAFC",
-        neutral_100: "#F1F5F9",
-        neutral_200: "#E2E8F0",
-        neutral_300: "#CBD5E1",
-        neutral_400: "#94A3BB",
-        neutral_500: "#64748B",
-        neutral_600: "#475569",
-        neutral_700: "#334155",
-        neutral_800: "#1E292B",
-        neutral_900: "#1E1E1E",
-        // ? Base
+        primary: {
+          50: "#F8FAFC",
+          100: "#F1F5F9",
+          200: "#E2E8F0",
+          300: "#008396",
+          400: "#006E7E",
+          500: "",
+          600: "",
+          700: "",
+          800: "",
+          900: "",
+        },
+        secondary: {
+          50: "",
+          100: "",
+          200: "",
+          300: "",
+          400: "",
+          500: "",
+          600: "",
+          700: "",
+          800: "",
+          900: "",
+        },
+        neutral: {
+          50: "#F8FAFC",
+          100: "#F1F5F9",
+          200: "#E2E8F0",
+          300: "#CBD5E1",
+          400: "#94A3BB",
+          500: "#64748B",
+          600: "#475569",
+          700: "#334155",
+          800: "#1E292B",
+          900: "#1E1E1E",
+        },
+        danger: {
+          50: "#FEF2F2",
+          100: "#",
+          200: "#",
+          300: "#93C%FD",
+          400: "#",
+          500: "#EF4444",
+          600: "#",
+          700: "#7F1D1D",
+          800: "#",
+          900: "#7F1D1D",
+        },
         white: "#ffffff",
         black: "#000000",
-        // ? Reds
-        danger_50: "#FEF2F2",
-        danger_300: "#93C%FD",
-        danger_500: "#EF4444",
-        danger_700: "#B91C1C",
-        danger_900: "#7F1D1D",
       },
       //
       // TODO  Set box shadow settings if the project has them. If not, delete line 31-33
@@ -270,12 +289,6 @@ module.exports = {
         extend: {},
       },
     },
-    purge: [
-      "./pages/**/*.{js,ts,jsx,tsx}",
-      "./components/**/*.{js,ts,jsx,tsx}",
-    ],
-    darkMode: false,
-    mode: "jit",
     future: {
       removeDeprecatedGapUtilities: true,
       purgeLayersByDefault: true,

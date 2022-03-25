@@ -39,8 +39,8 @@ export default {
           { title: "Twitter", value: "twitter" },
           { title: "Facebook", value: "facebook" },
           { title: "Instagram", value: "instagram" },
-          { title: "TikTok", value: "TikTok" },
-          { title: "Pinterest", value: "Pinterest" },
+          { title: "TikTok", value: "tikTok" },
+          { title: "Pinterest", value: "pinterest" },
         ],
       },
     },
@@ -56,12 +56,12 @@ export default {
       title: "socialMedia",
       subtitle: "url",
     },
-  },
-  prepare({ title, subtitle }) {
-    return {
-      title,
-      subtitle: subtitle ? subtitle : "Ikke lagt inn lenke",
-      media: getIcon(title),
-    };
+    prepare({ title, subtitle }) {
+      return {
+        title: title.charAt(0).toUpperCase() + title.substring(1),
+        subtitle: subtitle ? subtitle : "Ikke lagt inn lenke",
+        media: getIcon(title),
+      };
+    },
   },
 };

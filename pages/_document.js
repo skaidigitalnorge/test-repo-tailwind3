@@ -7,30 +7,13 @@ class MyDocument extends Document {
   }
 
   render() {
-    // TODO Paste the GA tracking in the string below and uncomment the code in the <Head>-tag"
-    const GA_MEASUREMENT_ID = "GA_MEASUREMENT_ID";
     return (
       <Html lang="nb">
-        <Head>
-          {/* <script
-            async
-            src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
-          />
-          dangerouslySetInnerHTML=
-          {{
-            __html: `
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-                gtag('config', '${GA_MEASUREMENT_ID}', {
-                  page_path: window.location.pathname,
-                });
-              `,
-          }} */}
-        </Head>
+        <Head></Head>
         <body>
           <Main />
           <NextScript />
+          <div id="modal-root" />
         </body>
       </Html>
     );

@@ -82,51 +82,51 @@ export default function config() {
             <FourEightTwelve>
               <h1>Test av farger</h1>
             </FourEightTwelve>
-            <TwoTwoTwo c="bg-neutral_50 h-56 flex justify-center items-center">
-              Neutral_50
+            <TwoTwoTwo c="bg-neutral-50 h-56 flex justify-center items-center">
+              neutral-50
             </TwoTwoTwo>
-            <TwoTwoTwo c="bg-neutral_100 h-56 flex justify-center items-center">
-              Neutral_100
+            <TwoTwoTwo c="bg-neutral-100 h-56 flex justify-center items-center">
+              neutral-100
             </TwoTwoTwo>
-            <TwoTwoTwo c="bg-neutral_200 h-56 flex justify-center items-center">
-              Neutral_200
+            <TwoTwoTwo c="bg-neutral-200 h-56 flex justify-center items-center">
+              neutral-200
             </TwoTwoTwo>
-            <TwoTwoTwo c="bg-neutral_300 h-56 flex justify-center items-center">
-              Neutral_300
+            <TwoTwoTwo c="bg-neutral-300 h-56 flex justify-center items-center">
+              neutral-300
             </TwoTwoTwo>
-            <TwoTwoTwo c="bg-neutral_400 h-56 flex justify-center items-center">
-              Neutral_400
+            <TwoTwoTwo c="bg-neutral-400 h-56 flex justify-center items-center">
+              neutral-400
             </TwoTwoTwo>
-            <TwoTwoTwo c="bg-neutral_500 h-56 flex justify-center items-center">
-              Neutral_500
+            <TwoTwoTwo c="bg-neutral-500 h-56 flex justify-center items-center">
+              neutral-500
             </TwoTwoTwo>
-            <TwoTwoTwo c="bg-neutral_600 h-56 flex justify-center items-center">
-              Neutral_600
+            <TwoTwoTwo c="bg-neutral-600 h-56 flex justify-center items-center">
+              neutral-600
             </TwoTwoTwo>
-            <TwoTwoTwo c="bg-neutral_700 h-56 flex justify-center items-center">
-              Neutral_700
+            <TwoTwoTwo c="bg-neutral-700 h-56 flex justify-center items-center">
+              neutral-700
             </TwoTwoTwo>
-            <TwoTwoTwo c="bg-neutral_800 h-56 flex justify-center items-center">
-              Neutral_800
+            <TwoTwoTwo c="bg-neutral-800 h-56 flex justify-center items-center">
+              neutral-800
             </TwoTwoTwo>
-            <TwoTwoTwo c="bg-neutral_900 h-56 flex justify-center items-center">
-              Neutral_900
+            <TwoTwoTwo c="bg-neutral-900 h-56 flex justify-center items-center">
+              neutral-900
             </TwoTwoTwo>
             <TwoTwoTwo></TwoTwoTwo>
             <TwoTwoTwo></TwoTwoTwo>
-            <TwoTwoTwo c="bg-primary_50 h-56 flex justify-center items-center">
+            <TwoTwoTwo c="bg-primary-50 h-56 flex justify-center items-center">
               Primary-50
             </TwoTwoTwo>
-            <TwoTwoTwo c="bg-primary_300 h-56 flex justify-center items-center">
+            <TwoTwoTwo c="bg-primary-300 h-56 flex justify-center items-center">
               Primary-300
             </TwoTwoTwo>
-            <TwoTwoTwo c="bg-primary_500 h-56 flex justify-center items-center">
+            <TwoTwoTwo c="bg-primary-500 h-56 flex justify-center items-center">
               Primary-500
             </TwoTwoTwo>
-            <TwoTwoTwo c="bg-primary_700 h-56 flex justify-center items-center">
+            <TwoTwoTwo c="bg-primary-700 h-56 flex justify-center items-center">
               Primary-700
             </TwoTwoTwo>
-            <TwoTwoTwo c="bg-primary_900 h-56 flex justify-center items-center">
+            <TwoTwoTwo c="bg-primary-900 h-56 flex justify-center items-center">
               Primary-900
             </TwoTwoTwo>
             <FourEightTwelve>

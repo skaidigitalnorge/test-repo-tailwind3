@@ -10,6 +10,9 @@ export default {
       description:
         "Her kan du legge inn alle sosiale mediene hvor du har en bruker du ønsker å dele",
       of: [{ type: "socialMedia" }],
+      options: {
+        editModal: "popover",
+      },
     },
   ],
 };

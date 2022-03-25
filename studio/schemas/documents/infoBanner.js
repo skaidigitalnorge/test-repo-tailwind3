@@ -4,6 +4,16 @@ export default {
   type: "document",
   fields: [
     {
+      name: "note",
+      type: "note",
+      options: {
+        headline: "Hva er dette?",
+        message:
+          "Her fyller du ut innholdet som vises i 'banneret' som vises helt øverst på alle sidene.Du kan også velge å skjule den hvis du ønsker det.",
+        tone: "brand",
+      },
+    },
+    {
       title: "Vise infobanner?",
       name: "isShown",
       type: "boolean",
@@ -13,7 +23,7 @@ export default {
       title: "Tekst",
       name: "title",
       type: "string",
-      description: "Skriv hva du ønsker å vise i fanen her",
+      description: "Skriv hva du ønsker å vise i fanen",
     },
     {
       title: "Linke til noe? (valgfritt)",

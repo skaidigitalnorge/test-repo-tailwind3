@@ -50,7 +50,7 @@
 .embla__button {
   outline: 0;
   cursor: pointer;
-  background-color: white;
+  /* background-color: white; */
   touch-action: manipulation;
   position: absolute;
   z-index: 1;
@@ -61,7 +61,7 @@
   height: 20px;
   justify-content: center;
   align-items: center;
-  fill: #1bcacd;
+  /* fill: #1bcacd; */
   padding: 4px;
   border-radius: 50%;
 }
@@ -90,7 +90,6 @@
   justify-content: center;
   align-items: flex-end;
   height: 100%;
-  padding-bottom: 16px;
 }
 
 .embla__dot {
@@ -113,6 +112,6 @@
 }
 
 .embla__dot.is-selected:after {
-  background-color: #1bcacd;
+  @apply bg-black;
   opacity: 1;
 }
