@@ -1,7 +1,7 @@
 import client from "@sanity/client";
 
 // Document type for all incoming synced Shopify products
-const SHOPIFY_PRODUCT_DOCUMENT_TYPE = "shopify.product";
+const SHOPIFY_PRODUCT_DOCUMENT_TYPE = "product";
 
 // Prefix added to all Sanity product document ids
 const SHOPIFY_PRODUCT_DOCUMENT_ID_PREFIX = "product-";
@@ -18,11 +18,11 @@ const SHOPIFY_PRODUCT_DOCUMENT_ID_PREFIX = "product-";
 //   useCdn: false,
 // });
 const sanityClient = client({
-  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
+  apiVersion: "2021-03-25",
   dataset: process.env.NEXT_PUBLIC_SANITY_DATASET,
+  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
   token:
     "skvAc1RNcYnP5j2e6aX2CtJJ9VKU6IUUxfiZy9hoxDuY3gntfwX5UqmLWOBnucUDRslNLCsvc6hd1FEDJ3pG4aiHoRiV1RwE4r3vFXHuMpmDABTOEOYpYbySSAtQq3S7xlJ53JOaxEmEIk5nTjTZGNs5xjrD0SILEdQ6FP6xmWCD3vkDCn6W",
-  apiVersion: "2021-03-25",
   useCdn: false,
 });
 

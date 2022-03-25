@@ -20,13 +20,20 @@ export default {
   fields: [
     // Shopify data
     //
+    // {
+    //   title: "Produktnavn",
+    //   name: "productTitle",
+    //   type: "string",
+    //   readOnly: true,
+    //   fieldset: "shopify",
+    //   group: "content",
+    //   options: { field: "store.title" },
+    // },
     {
-      title: "Produktnavn",
-      name: "productTitle",
+      title: "Title",
+      name: "titleProxy",
       type: "string",
-      readOnly: true,
-      fieldset: "shopify",
-      group: "content",
+      options: { field: "store.title" },
     },
     {
       title: "Produkt-ID",
